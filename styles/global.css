@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-size: 14.5px;
+  font-family: 'Poppins', sans-serif;
+  color: #262f40;
+}
+
+:root {
+  --font-color: #333;
+  --font-color-low-empashis: rgba(0, 0, 0, 0.65);
+}
+
+.nav-list li {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.nav-list li:hover {
+  color: #01b8e6;
+}
+
+.main-img {
+  margin-top: -5%;
+  background: url("https://img.global.news.samsung.com/in/wp-content/uploads/2022/03/11271-Galaxy-A53-5G-3000x2000.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.nav-main h4,
+.nav-main-white h4 {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  font-weight: normal;
+}
+
+.nav-main h4:hover {
+  color: #6e6e6e;
+}
+
+.nav-main-white h4:hover {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.bg-section-tv {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.photo-transform {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.photo-transform:hover {
+  transform: scale(1.1);
+}
+
+.big-link {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  color: #6e6e6e;
+  margin-top: 6em;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.big-link:hover {
+  color: #333;
+}
+
+.sidebar-option {
+  font-size: 13px;
+  padding: 15px 0px 15px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-item {
+  color: var(--font-color-low-empashis)
+}
+
+.catalogo-item-list {
+  font-size: 12.5px;
+  color: var(--font-color-low-empashis)
+}
+
+.bg-create-product {
+  background: url("/assets/images/create-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 225px;
+  width: 225px;
+}
+
+.icon-nav * {
+  color: #c9ccce;
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 6px 8px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 740px) {
+  .destaques-container {
+    flex-wrap: wrap;
+  }
+
+  .destaques-sub-container {
+    flex-wrap: wrap;
+  }
+}
