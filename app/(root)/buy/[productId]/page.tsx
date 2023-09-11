@@ -60,7 +60,7 @@ const page = () => {
                   {data.display ? (<>Display {data.display} </>) : (<></>)}
                   {data.voltagem ? (<>{data.voltagem}</>) : (<></>)}
                 </h1>
-                <h4 className='text-neutral-500 text-sm font-normal mt-2'>{data.descricao ? (<>{data.descricao}</>) : (<>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro at dignissimos consectetur ab enim, magnam incidunt perspiciatis culpa harum ducimus doloremque odit modi soluta est eligendi quas tenetur quod repellendus.</>)}</h4>
+                <h4 className='text-neutral-500 text-sm font-normal mt-2'>{data.descricao ? (<>{data.descricao}</>) : (<>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro at dignissimos consectetur ab enim, magnam incidunt perspiciatis culpa harum ducimus doloremque odit modi soluta est eligendi quas tenetur quod repellendusa.</>)}</h4>
                 <ul className='list-disc ml-4 mt-6 text-sm'>
                   <li>Design Flat</li>
                   <li>All Around Cooling™</li>
