@@ -7,16 +7,18 @@ export const POST = async (request: Request) => {
   try {
     const user = await currentUser()
 
+    console.log(form)
+
       const newCellphone = await prisma.cellphone.create({
         data: {
           nome: form.nome,
-          preco: form.preco,
-          desconto: form.desconto,
+          preco: Number(form.preco),
+          desconto: Number(form.desconto),
           cor: form.cor,
           tamanhoTela: form.tamanhoTela,
           conectividade: form.conectividade,
           armazenamento: form.armazenamento,
-          qualidadeCamera: form.qualidadeCamera,
+          qualidadeCamera: Number(form.qualidadeCamera),
           qtdCameras: form.qtdCameras,
           faixaPreco: form.faixaPreco,
           foto: image

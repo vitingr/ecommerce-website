@@ -19,7 +19,7 @@ export const createGeladeira = [
   },
   {
     option: "desconto",
-    name: "Desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
@@ -69,7 +69,7 @@ export const createGeladeira = [
     ]
   },
   {
-    option: "numPortas",
+    option: "numeroPortas",
     name: "Numero de Portas",
     type: "select",
     options: [
@@ -113,31 +113,31 @@ export const createGeladeira = [
 
 export const createArCondicionado = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
   {
-    option: "setCor",
+    option: "cor",
     name: "Cor",
     type: "checkbox",
     options: [
@@ -147,7 +147,7 @@ export const createArCondicionado = [
     ]
   },
   {
-    option: "setClasse",
+    option: "classe",
     name: "Classe",
     type: "select",
     options: [
@@ -157,7 +157,7 @@ export const createArCondicionado = [
     ]
   },
   {
-    option: "setTecnologia",
+    option: "tecnologia",
     name: "Tecnologia WindFree (sem vento)",
     type: "select",
     options: [
@@ -166,7 +166,7 @@ export const createArCondicionado = [
     ]
   },
   {
-    option: "setLinha",
+    option: "linha",
     name: "Linha WindFree",
     type: "select",
     options: [
@@ -177,7 +177,7 @@ export const createArCondicionado = [
     ]
   },
   {
-    option: "setUltra",
+    option: "linhaUltra",
     name: "Linha Ultra",
     type: "select",
     options: [
@@ -186,7 +186,7 @@ export const createArCondicionado = [
     ]
   },
   {
-    option: "setCapacidade",
+    option: "capacidade",
     name: "Capacidade",
     type: "select",
     options: [
@@ -199,7 +199,7 @@ export const createArCondicionado = [
     ]
   },
   {
-    option: "setCiclo",
+    option: "ciclo",
     name: "Ciclo",
     type: "select",
     options: [
@@ -211,31 +211,31 @@ export const createArCondicionado = [
 
 export const createMaquinaLavar = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
   {
-    option: "setModelo",
+    option: "modelo",
     name: "Modelo",
     type: "select",
     options: [
@@ -245,7 +245,7 @@ export const createMaquinaLavar = [
     ]
   },
   {
-    option: "setCapacidade",
+    option: "capacidade",
     name: "Capacidade",
     type: "select",
     options: [
@@ -255,7 +255,7 @@ export const createMaquinaLavar = [
     ]
   },
   {
-    option: "setCores",
+    option: "cor",
     name: "Cores",
     type: "select",
     options: [
@@ -265,7 +265,7 @@ export const createMaquinaLavar = [
     ]
   },
   {
-    option: "Voltagem",
+    option: "voltagem",
     name: "Voltagem",
     type: "select",
     options: [
@@ -277,31 +277,31 @@ export const createMaquinaLavar = [
 
 export const createLavaLoucas = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
   {
-    option: "setCapacidade",
+    option: "capacidade",
     name: "Capacidade",
     type: "select",
     options: [
@@ -314,31 +314,31 @@ export const createLavaLoucas = [
 
 export const createAspirador = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
   {
-    option: "setRecursos",
+    option: "recursos",
     name: "Recursos",
     type: "checkbox",
     options: [
@@ -350,26 +350,26 @@ export const createAspirador = [
 
 export const createCellphone = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
@@ -389,18 +389,25 @@ export const createCellphone = [
     ]
   },
   {
-    option: "setTamanhoTela",
+    option: "tamanhoTela",
     name: "Tamanho da Tela",
     type: "select",
     options: [
-      {title: "6.0' - 6.2'"},
-      {title: "6.3' - 6.5'"},
-      {title: "6.6' - 6.9'"},
+      {title: "6.0'"},
+      {title: "6.1'"},
+      {title: "6.2'"},
+      {title: "6.3'"},
+      {title: "6.4'"},
+      {title: "6.5'"},
+      {title: "6.6'"},
+      {title: "6.7'"},
+      {title: "6.8'"},
+      {title: "6.9'"},
       {title: "7.0'"},
     ]
   },
   {
-    option: "setConectividade",
+    option: "conectividade",
     name: "Conectividade",
     type: "select",
     options: [
@@ -409,7 +416,7 @@ export const createCellphone = [
     ]
   },
   {
-    option: "setArmazenamento",
+    option: "armazenamento",
     name: "Armazenamento",
     type: "select",
     options: [
@@ -422,20 +429,13 @@ export const createCellphone = [
     ]
   },
   {
-    option: "setQualidadeCamera",
-    name: "Qualidade da Câmera",
-    type: "select",
-    options: [
-      {title: "4.9MP"},
-      {title: "9 - 12.9MP"},
-      {title: "13 - 18MP"},
-      {title: "19 - 23MP"},
-      {title: "24 - 199MP"},
-      {title: "+ 200MP"},
-    ]
+    option: "qualidadeCamera",
+    name: "Qualidade da Câmera (em Megapixels)",
+    type: "number",
+    options: []
   },
   {
-    option: "setQtdCameras",
+    option: "qtdCameras",
     name: "Quantidade de Câmeras",
     type: "select",
     options: [
@@ -445,7 +445,7 @@ export const createCellphone = [
     ]
   },
   {
-    option: "setFaixaPreco",
+    option: "faixaPreco",
     name: "Faixa de Preço",
     type: "select",
     options: [
@@ -458,32 +458,32 @@ export const createCellphone = [
 
 export const createNotebook  = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
   {
-    option: "setSistema",
-    name: "setSistema",
+    option: "sistema",
+    name: "Sistema",
     type: "select",
     options: [
       { title: "Windows 11" },
@@ -492,7 +492,7 @@ export const createNotebook  = [
     ]
   },
   {
-    option: "setArmazenamento",
+    option: "armazenamento",
     name: "Armazenamento",
     type: "select",
     options: [
@@ -503,7 +503,7 @@ export const createNotebook  = [
     ]
   },
   {
-    option: "setMemoria",
+    option: "memoria",
     name: "Memória RAM",
     type: "select",
     options: [
@@ -515,7 +515,7 @@ export const createNotebook  = [
     ]
   },
   {
-    option: "setTamanhoTela",
+    option: "tamanhoTela",
     name: "Tamanho da Tela",
     type: "select",
     options: [
@@ -525,7 +525,7 @@ export const createNotebook  = [
     ]
   },
   {
-    option: "setRecursos",
+    option: "recursos",
     name: "Recursos",
     type: "checkbox",
     options: [
@@ -536,31 +536,31 @@ export const createNotebook  = [
 
 export const createSmartWatch = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
   {
-    option: "setTamanho",
+    option: "tamanho",
     name: "Tamanho",
     type: "select",
     options: [
@@ -572,7 +572,7 @@ export const createSmartWatch = [
     ]
   },
   {
-    option: "setConectividade",
+    option: "conectividade",
     name: "Conectividade",
     type: "select",
     options: [
@@ -581,7 +581,7 @@ export const createSmartWatch = [
     ]
   },
   {
-    option: "setMaterial",
+    option: "material",
     name: "Material do Produto",
     type: "select",
     options: [
@@ -594,31 +594,31 @@ export const createSmartWatch = [
 
 export const createMonitor = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
   {
-    option: "setTipo",
+    option: "tipo",
     name: "Tipo do Monitor",
     type: "select",
     options: [
@@ -631,7 +631,7 @@ export const createMonitor = [
     ]
   },
   {
-    option: "setTamanhoTela",
+    option: "tamanhoTela",
     name: "Tamanho da Tela",
     type: "select",
     options: [
@@ -643,7 +643,7 @@ export const createMonitor = [
     ]
   },
   {
-    option: "setResolucao",
+    option: "resolucao",
     name: "Resolução",
     type: "select",
     options: [
@@ -656,7 +656,7 @@ export const createMonitor = [
     ]
   },
   {
-    option: "setTaxaAtualizacao",
+    option: "taxaAtualizacao",
     name: "Taxa de Atualização",
     type: "select",
     options: [
@@ -671,7 +671,7 @@ export const createMonitor = [
     ]
   },
   {
-    option: "setTempoResposta",
+    option: "tempoResposta",
     name: "Tempo de Resposta",
     type: "select",
     options: [
@@ -684,7 +684,7 @@ export const createMonitor = [
     ]
   },
   {
-    option: "setProporcao",
+    option: "proporcao",
     name: "Proporção de Tela",
     type: "select",
     options: [
@@ -694,7 +694,7 @@ export const createMonitor = [
     ]
   },
   {
-    option: "setRecursos",
+    option: "recursos",
     name: "Recursos",
     type: "checkbox",
     options: [
@@ -711,31 +711,31 @@ export const createMonitor = [
 
 export const createTV = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
   {
-    option: "setTipo",
+    option: "tipo",
     name: "Tipo do Monitor",
     type: "select",
     options: [
@@ -747,7 +747,7 @@ export const createTV = [
     ]
   },
   {
-    option: "setTamanhoTela",
+    option: "tamanhoTela",
     name: "Tamanho da Tela",
     type: "select",
     options: [
@@ -766,7 +766,7 @@ export const createTV = [
     ]
   },
   {
-    option: "setTipoResolucao",
+    option: "tipoResolucao",
     name: "Tipo de Resolução",
     type: "select",
     options: [
@@ -777,7 +777,7 @@ export const createTV = [
     ]
   },
   {
-    option: "setRecursos",
+    option: "recursos",
     name: "Recursos",
     type: "checkbox",
     options: [
@@ -793,31 +793,31 @@ export const createTV = [
 
 export const createTeclado = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
   {
-    option: "setCor",
+    option: "cor",
     name: "Cor",
     type: "select",
     options: [
@@ -827,7 +827,7 @@ export const createTeclado = [
     ]
   },
   {
-    option: "setTipo",
+    option: "tipo",
     name: "Tipo do Teclado",
     type: "select",
     options: [
@@ -836,7 +836,7 @@ export const createTeclado = [
     ]
   },
   {
-    option: "setLayout",
+    option: "layout",
     name: "Layout",
     type: "select",
     options: [
@@ -848,31 +848,31 @@ export const createTeclado = [
 
 export const createAcessorio = [
   {
-    option: "setNome",
+    option: "nome",
     name: "Nome",
     type: "text",
     options: []
   },
   {
-    option: "setDescricao",
+    option: "descricao",
     name: "Descrição",
     type: "text",
     options: []
   },
   {
-    option: "setPreco",
+    option: "preco",
     name: "Preço",
     type: "number",
     options: []
   },
   {
-    option: "setDesconto",
-    name: "Desconto",
+    option: "desconto",
+    name: "Desconto (em %)",
     type: "number",
     options: []
   },
   {
-    option: "setTipo",
+    option: "tipo",
     name: "Tipo do Produto",
     type: "select",
     options: [

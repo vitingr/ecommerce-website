@@ -57,5 +57,21 @@ export interface FormState {
   tecnologia: string;
   linha: string;
   linhaUltra: string;
-  ciclo: string
+  ciclo: string;
+  tamanhoTela: string;
+  conectividade: string;
+  armazenamento: string;
+  qualidadeCamera: number;
+  qtdCameras: string;
+  faixaPreco: string;
+  memoria: string;
+  sistema: string;
+  material: string;
+  tamanho: string;
+  resolucao: string;
+  taxaAtualizacao: string;
+  tempoResposta: string;
+  proporcao: string;
+  tipo: string;
+  layout: string;
 }

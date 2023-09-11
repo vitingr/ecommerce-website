@@ -31,7 +31,7 @@ const CatalogoCard = ({ content }: { content: any }) => {
             <></>
           )}
           {content.cor.includes("Cinza Acetinado") ? (
-            <div className='w-4 h-4 rounded-full bg-stone-500 border border-zinc-500 cursor-pointer' />
+            <div className='w-4 h-4 rounded-full bg-slate-500 border border-zinc-500 cursor-pointer' />
           ) : (
             <></>
           )}

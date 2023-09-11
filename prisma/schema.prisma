@@ -49,6 +49,7 @@ model AirConditioner {
   categoria    String  @default("home-appliences")
   subcategoria String  @default("air-conditioners")
   nome         String? @unique
+  descricao    String?
   preco        Float?
   desconto     Int?
   cor          String?
@@ -65,8 +66,9 @@ model AirConditioner {
 model Vacuum {
   id           String  @id @default(auto()) @map("_id") @db.ObjectId
   categoria    String  @default("home-appliences")
-  subcategoria String  @default("vacuum")
+  subcategoria String  @default("vacuums")
   nome         String? @unique
+  descricao    String?
   preco        Float?
   desconto     Int?
   cor          String?
@@ -80,6 +82,7 @@ model Dishwashers {
   categoria    String  @default("home-appliences")
   subcategoria String  @default("dishwashers")
   nome         String? @unique
+  descricao    String?
   preco        Float?
   desconto     Int?
   cor          String?
@@ -91,8 +94,9 @@ model Dishwashers {
 model WashMachines {
   id           String  @id @default(auto()) @map("_id") @db.ObjectId
   categoria    String  @default("home-appliences")
-  subcategoria String  @default("wash-mashine")
+  subcategoria String  @default("washmashines")
   nome         String? @unique
+  descricao    String?
   preco        Int?
   desconto     Int?
   cor          String?
@@ -106,12 +110,13 @@ model WashMachines {
 model Cellphone {
   id              String  @id @default(auto()) @map("_id") @db.ObjectId
   categoria       String  @default("home-appliences")
-  subcategoria    String  @default("cellphone")
+  subcategoria    String  @default("cellphones")
   nome            String? @unique
+  descricao       String?
   preco           Int?
   desconto        Int?
   cor             String?
-  tamanhoTela     Int?
+  tamanhoTela     String?
   conectividade   String?
   armazenamento   String?
   qualidadeCamera Int?
@@ -123,14 +128,15 @@ model Cellphone {
 model Notebook {
   id            String  @id @default(auto()) @map("_id") @db.ObjectId
   categoria     String  @default("home-appliences")
-  subcategoria  String  @default("notebook")
+  subcategoria  String  @default("notebooks")
   nome          String? @unique
+  descricao     String?
   preco         Int?
   desconto      Int?
   sistema       String?
   armazenamento String?
   memoria       String?
-  tamanhoTela   Int?
+  tamanhoTela   String?
   recursos      String?
   foto          String?
 }
@@ -138,8 +144,9 @@ model Notebook {
 model SmartWatch {
   id            String  @id @default(auto()) @map("_id") @db.ObjectId
   categoria     String  @default("home-appliences")
-  subcategoria  String  @default("smart-watch")
+  subcategoria  String  @default("smart-watches")
   nome          String? @unique
+  descricao     String?
   preco         Int?
   desconto      Int?
   tamanho       String?
@@ -151,12 +158,13 @@ model SmartWatch {
 model Monitor {
   id              String  @id @default(auto()) @map("_id") @db.ObjectId
   categoria       String  @default("home-appliences")
-  subcategoria    String  @default("monitor")
+  subcategoria    String  @default("monitors")
   nome            String? @unique
+  descricao       String?
   preco           Int?
   desconto        Int?
   tipo            String?
-  tamanhoTela     Int?
+  tamanhoTela     String?
   resolucao       String?
   taxaAtualizacao String?
   tempoResposta   String?
@@ -168,8 +176,9 @@ model Monitor {
 model Television {
   id           String  @id @default(auto()) @map("_id") @db.ObjectId
   categoria    String  @default("home-appliences")
-  subcategoria String  @default("television")
+  subcategoria String  @default("televisions")
   nome         String? @unique
+  descricao    String?
   preco        Int?
   desconto     Int?
   tipo         String?
@@ -182,8 +191,9 @@ model Television {
 model Keyboard {
   id           String  @id @default(auto()) @map("_id") @db.ObjectId
   categoria    String  @default("home-appliences")
-  subcategoria String  @default("keyboard")
+  subcategoria String  @default("keyboards")
   nome         String? @unique
+  descricao    String?
   preco        Int?
   desconto     Int?
   cor          String?
@@ -195,8 +205,9 @@ model Keyboard {
 model Gadget {
   id           String  @id @default(auto()) @map("_id") @db.ObjectId
   categoria    String  @default("home-appliences")
-  subcategoria String  @default("gadget")
+  subcategoria String  @default("gadgets")
   nome         String? @unique
+  descricao    String?
   preco        Int?
   desconto     Int?
   tipo         String?

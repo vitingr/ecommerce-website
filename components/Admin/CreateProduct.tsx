@@ -32,6 +32,22 @@ const CreateProduct = ({ type }: { type: string }) => {
     linha: "",
     linhaUltra: "",
     ciclo: "",
+    tamanhoTela: "",
+    conectividade: "",
+    armazenamento: "",
+    qualidadeCamera: 0,
+    qtdCameras: "",
+    faixaPreco: "",
+    memoria: "",
+    sistema: "",
+    material: "",
+    tamanho: "",
+    resolucao: "",
+    taxaAtualizacao: "",
+    tempoResposta: "",
+    proporcao: "",
+    tipo: "",
+    layout: ""
   })
   const [photo, setPhoto] = useState("")
 
@@ -94,6 +110,7 @@ const CreateProduct = ({ type }: { type: string }) => {
 
   const handleStateChange = async (fieldName: keyof FormState | string, value: string | number) => {
     setForm((prevForm) => ({ ...prevForm, [fieldName]: value }));
+    console.log(form)
   };
 
   useEffect(() => {
