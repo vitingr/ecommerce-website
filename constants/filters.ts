@@ -25,7 +25,7 @@ export const createOptions = {
   "monitor": createMonitor,
   "keyboard": createTeclado,
   "notebook": createNotebook,
-  "smartWatch": createSmartWatch,
+  "smart-watch": createSmartWatch,
   "tv": createTV,
   "gadget": createAcessorio
 }

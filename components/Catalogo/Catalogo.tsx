@@ -20,7 +20,7 @@ const Catalogo = ({ type }: catalogo) => {
     }
   }, [type])  
 
-  return (
+  return data.length > 0 ? (
     <div className='max-w-[950px] w-full'>
       {type === "cellphone" ? (
         <div className='w-full flex gap-10'>
@@ -52,6 +52,8 @@ const Catalogo = ({ type }: catalogo) => {
         </div>
       )}
     </div>
+  ): (
+    <div className="loader"></div>
   )
 }
 

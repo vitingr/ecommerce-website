@@ -8,10 +8,12 @@ const page = () => {
   const pathname = usePathname().split("/")
   const query = pathname[3]
 
-  return (
+  return query ? (
     <div className='w-full flex justify-center bg-[#f7f7f7] p-[3%]'>
       <CreateProduct type={query} />
     </div>
+  ) : (
+    <div className="loader"></div>
   )
 }
 

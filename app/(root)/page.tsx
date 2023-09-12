@@ -15,6 +15,18 @@ export default function Home() {
 
   }
 
+  const getUser = async () => {
+    const response = await fetch("/api/user", {
+      method: "POST"
+    })
+    console.log(response)
+  }
+  
+  useEffect(() => {
+    const user = getUser()
+    console.log(user)
+  }, [])
+
   return (
     <main className="w-full p-[5%] flex flex-col justify-center items-center xs:p-[0%]">
       <section className="max-w-[1750px] w-full flex flex-col justify-center items-center">

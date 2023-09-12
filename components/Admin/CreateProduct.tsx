@@ -114,7 +114,7 @@ const CreateProduct = ({ type }: { type: string }) => {
     setForm((prevForm) => ({ ...prevForm, [fieldName]: value }));
   };
 
-  return (
+  return query ? (
     <div className='max-w-[600px] p-14 w-full flex flex-col bg-white rounded-2xl'>
       <ToastMessage />
       <h1 className='text-4xl font-extrabold'>Cadastrar Produto</h1>
@@ -130,6 +130,8 @@ const CreateProduct = ({ type }: { type: string }) => {
         <button type='submit' className='w-full p-3 text-sm transition-all duration-200 bg-indigo-700 hover:bg-indigo-600 text-white rounded-2xl mt-10'>Enviar</button>
       </form>
     </div>
+  ) : (
+    <div className="loader"></div>
   )
 }
 export default CreateProduct
