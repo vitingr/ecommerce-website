@@ -17,10 +17,10 @@ const CellphoneCard = ({ content }: { content: any }) => {
           ) : (
             <></>
           )}
-          {content.cor.includes("Inbox / Prata") ? (<div className='w-4 h-4 rounded-full bg-emerald-500 border border-zinc-500 cursor-pointer' />) : (<></>)}
+          {content.cor.includes("Inbox / Prata") ? (<div className='w-4 h-4 rounded-full bg-slate-400 border border-zinc-500 cursor-pointer' />) : (<></>)}
           {content.cor.includes("Branco") ? (<div className='w-4 h-4 rounded-full bg-white border border-zinc-500 cursor-pointer' />) : (<></>)}
           {content.cor.includes("Preto") ? (<div className='w-4 h-4 rounded-full bg-[#262f40] border border-zinc-500 cursor-pointer' />) : (<></>)}
-          {content.cor.includes("Cinza Acetinado") ? (<div className='w-4 h-4 rounded-full bg-slate-500 border border-zinc-500 cursor-pointer' />) : (<></>)}
+          {content.cor.includes("Cinza Acetinado") ? (<div className='w-4 h-4 rounded-full bg-gray-500 border border-zinc-500 cursor-pointer' />) : (<></>)}
           {content.cor.includes("Dourado") ? (<div className='w-4 h-4 rounded-full bg-amber-500 border border-zinc-500 cursor-pointer' />) : (<></>)}
           {content.cor.includes("Verde") ? (<div className='w-4 h-4 rounded-full bg-emerald-500 border border-zinc-500 cursor-pointer' />) : (<></>)}
           {content.cor.includes("Azul Marinho") ? (<div className='w-4 h-4 rounded-full bg-blue-950 border border-zinc-500 cursor-pointer' />) : (<></>)}

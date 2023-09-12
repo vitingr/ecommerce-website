@@ -110,7 +110,6 @@ const CreateProduct = ({ type }: { type: string }) => {
 
   const handleStateChange = async (fieldName: keyof FormState | string, value: string | number) => {
     setForm((prevForm) => ({ ...prevForm, [fieldName]: value }));
-    console.log(form)
   };
 
   useEffect(() => {

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import ProductSidebar from '@components/ProductSidebar'
 import { IoCaretForward } from 'react-icons/io5'
+import Link from 'next/link'
 
 const page = () => {
 
@@ -34,15 +35,17 @@ const page = () => {
               <h3 className='text-white font-extralight text-xs'>Por <span className='font-bold text-base text-white'>R${data.preco},00</span> à vista</h3>
               <h5 className='text-white font-extralight text-xs'>ou 12x de <span className='font-bold text-base text-white'>R${(data.preco / 12).toFixed(2)},00</span> nos demais cartões</h5>
             </div>
-            <div className='bg-blue-400 text-white rounded-full p-2 w-[200px] text-center cursor-pointer hover:bg-blue-500 transition-all duration-300 font-bold'>
-              Comprar Agora
-            </div>
+            <Link href={`/buy/${query}/confirm`}>
+              <div className='bg-blue-400 text-white rounded-full p-2 w-[200px] text-center cursor-pointer hover:bg-blue-500 transition-all duration-300 font-bold'>
+                Comprar Agora
+              </div>
+            </Link>
           </div>
         </div>
       </div>
       <div className='w-full p-[2%] flex justify-center gap-24 bg-[#f7f7f7]'>
 
-        <section className='max-w-[1150px] p-16 bg-white max-h-[700px] rounded-lg'>
+        <section className='max-w-[1150px] p-16 bg-white rounded-lg'>
           <div>
             <h4 className='flex items-center gap-4 mb-10 text-neutral-500 text-lg cursor-pointer'>Home <IoCaretForward /> Catalogo <IoCaretForward /> {data.nome}</h4>
           </div>
@@ -77,14 +80,70 @@ const page = () => {
                 ) : (
                   <></>
                 )}
+                {data.cor ? (
+                  <div className='mt-8 mb-8 flex gap-6'>
+                    {data.cor.includes("Inbox / Prata") ? (
+                      <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
+                        <div className='w-4 h-4 bg-slate-400 rounded-full' />
+                        <p className='mt-2 text-sm'>Inbox / Prata</p>
+                      </div>
+                    ) : (<></>)}
+                    {data.cor.includes("Branco") ? (
+                      <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
+                        <div className='w-4 h-4 bg-white rounded-full border border-gray-800' />
+                        <p className='mt-2 text-sm'>Branco</p>
+                      </div>
+                    ) : (<></>)}
+                    {data.cor.includes("Preto") ? (
+                      <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
+                        <div className='w-4 h-4 bg-[#262f40] rounded-full' />
+                        <p className='mt-2 text-sm'>Preto</p>
+                      </div>
+                    ) : (<></>)}
+                    {data.cor.includes("Cinza Acetinado") ? (
+                      <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
+                        <div className='w-4 h-4 bg-gray-500 rounded-full' />
+                        <p className='mt-2 text-sm'>Cinza Acetinado</p>
+                      </div>
+                    ) : (<></>)}
+                    {data.cor.includes("Dourado") ? (
+                      <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
+                        <div className='w-4 h-4 bg-amber-500 rounded-full' />
+                        <p className='mt-2 text-sm'>Dourado</p>
+                      </div>
+                    ) : (<></>)}
+                    {data.cor.includes("Verde") ? (
+                      <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
+                        <div className='w-4 h-4 bg-emerald-500 rounded-full' />
+                        <p className='mt-2 text-sm'>Verde</p>
+                      </div>
+                    ) : (<></>)}
+                    {data.cor.includes("Azul Marinho") ? (
+                      <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
+                        <div className='w-4 h-4 bg-blue-950 rounded-full' />
+                        <p className='mt-2 text-sm'>Azul Marinho</p>
+                      </div>
+                    ) : (<></>)}
+                    {data.cor.includes("Rosa") ? (
+                      <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
+                        <div className='w-4 h-4 bg-fuchsia-400 rounded-full' />
+                        <p className='mt-2 text-sm'>Rosa</p>
+                      </div>
+                    ) : (<></>)}
+                  </div>
+                ) : (
+                  <></>
+                )}
 
               </div>
               <div className='rounded-xl'>
                 <h4 className='text-2xl'>R$ {data.preco},00</h4>
                 <p>ou 12x de R${(data.preco / 12).toFixed(2)} vezes sem juros</p>
-                <div className='bg-[#262f40] mt-4 cursor-pointer font-bold text-center text-white w-full p-[7.5px] rounded-full hover:bg-[#1d2430] transition-all duration-200'>
-                  Comprar
-                </div>
+                <Link href={`/buy/${query}/confirm`}>
+                  <div className='bg-[#262f40] mt-4 cursor-pointer font-bold text-center text-white w-full p-[7.5px] rounded-full hover:bg-[#1d2430] transition-all duration-200'>
+                    Comprar
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
