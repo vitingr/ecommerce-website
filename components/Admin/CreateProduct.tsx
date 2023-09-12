@@ -1,10 +1,9 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import { createAcessorio, createArCondicionado, createAspirador, createCellphone, createGeladeira, createLavaLoucas, createMaquinaLavar, createMonitor, createNotebook, createSmartWatch, createTV, createTeclado, } from '@constants/admin'
-import UploadPhoto from '@components/UploadButton'
 import { toast } from 'react-toastify'
 import Upload from '@components/Upload'
+import { createOptions } from '@constants/filters'
 
 // Imports Components
 import ToastMessage from '@components/ToastMessage'
@@ -49,12 +48,11 @@ const CreateProduct = ({ type }: { type: string }) => {
     tipo: "",
     layout: ""
   })
+
   const [photo, setPhoto] = useState("")
 
   const createProduct = async () => {
-
     let photoCloudinary
-
     try {
       const imageUpload = await fetch(`/api/upload`, {
         method: "POST",
@@ -87,7 +85,11 @@ const CreateProduct = ({ type }: { type: string }) => {
     }
   }
 
-  const [query, setQuery] = useState(createGeladeira)
+  const search: {key?: string} = {
+    key: String(type)
+  }
+
+  const [query, setQuery] = useState<any>(search != undefined ? createOptions[search.key as keyof typeof createOptions] : "")
 
   const handleCheckChange = async (fieldName: keyof FormState | string, value: string) => {
     let actualColors = form.cor
@@ -112,45 +114,6 @@ const CreateProduct = ({ type }: { type: string }) => {
     setForm((prevForm) => ({ ...prevForm, [fieldName]: value }));
   };
 
-  useEffect(() => {
-    if (type === "refrigerator") {
-      setQuery(createGeladeira)
-    }
-    if (type === "air-conditioner") {
-      setQuery(createArCondicionado)
-    }
-    if (type === "dishwasher") {
-      setQuery(createLavaLoucas)
-    }
-    if (type === "washmachine") {
-      setQuery(createMaquinaLavar)
-    }
-    if (type === "vacuum") {
-      setQuery(createAspirador)
-    }
-    if (type === "cellphone") {
-      setQuery(createCellphone)
-    }
-    if (type === "notebook") {
-      setQuery(createNotebook)
-    }
-    if (type === "smart-watch") {
-      setQuery(createSmartWatch)
-    }
-    if (type === "monitor") {
-      setQuery(createMonitor)
-    }
-    if (type === "television") {
-      setQuery(createTV)
-    }
-    if (type === "keyboard") {
-      setQuery(createTeclado)
-    }
-    if (type === "gadget") {
-      setQuery(createAcessorio)
-    }
-  }, [])
-
   return (
     <div className='max-w-[600px] p-14 w-full flex flex-col bg-white rounded-2xl'>
       <ToastMessage />
@@ -160,7 +123,7 @@ const CreateProduct = ({ type }: { type: string }) => {
         e.preventDefault()
         createProduct()
       }}>
-        {query.map((item) => (
+        {query.map((item:any) => (
           <FormField item={item} setState={(value: any) => handleStateChange(item.option, value)} checkItem={(value: any) => handleCheckChange(item.option, value)} key={item.name} />
         ))}
         <Upload form={form} setState={(value: any) => handleStateChange("photo", value)} />
@@ -169,5 +132,4 @@ const CreateProduct = ({ type }: { type: string }) => {
     </div>
   )
 }
-
 export default CreateProduct
