@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
-import Upload from '@components/Upload'
+import Upload from '@components/Config/Upload'
 import { createOptions } from '@constants/filters'
 
 // Imports Components
-import ToastMessage from '@components/ToastMessage'
+import ToastMessage from '@components/Config/ToastMessage'
 import { FormState } from '@types'
 import FormField from '@components/FormField'
 

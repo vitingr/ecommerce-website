@@ -2,9 +2,13 @@
 
 import React, { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
+import ToastMessage from '@components/Config/ToastMessage'
+import { toast } from 'react-toastify'
 
 const page = () => {
 
+  const router = useRouter()
   const pathname = usePathname().split("/")
   const query = pathname[2]
 
@@ -17,6 +21,28 @@ const page = () => {
     setData(response)
   }
 
+  const buyProduct = async () => {
+    try {
+      const purchase = await fetch(`/api/user/buy`, {
+        method: "POST",
+        body: JSON.stringify({
+          productId: data.id,
+          value: data.preco
+        })
+      })
+
+      if (purchase.ok) {
+        toast.success("Produto Comprado com Sucesso!")
+        router.push("/")
+      } else {
+        toast.error("ERRO, não foi possível comprar o produto")
+      }
+
+    } catch (error) {
+      throw error
+    }
+  }
+
   useEffect(() => {
     if (query) {
       getData()
@@ -25,6 +51,7 @@ const page = () => {
 
   return data.nome !== undefined ? (
     <div className='w-full flex justify-center items-center p-[7%]'>
+      <ToastMessage />
       <div className='w-full flex justify-center gap-16 min-h-[600px] bg-white'>
         <div className='max-w-[650px]'>
           <div className='flex gap-6'>
@@ -85,12 +112,12 @@ const page = () => {
               <h1 className='w-full text-right text-2xl font-bold'>R$ {data.preco},00</h1>
             </div>
             <h5 className='text-sm text-neutral-500 mt-2'>Ou parcelado em até 12x de R$ {(data.preco / 12).toFixed(2)}</h5>
-            <div className='mt-12 w-full rounded-full p-2 text-center text-white bg-blue-500 font-bold cursor-pointer transition-all duration-300 hover:bg-blue-600'>
+            <div className='mt-12 w-full rounded-full p-2 text-center text-white bg-blue-500 font-bold cursor-pointer transition-all duration-300 hover:bg-blue-600' onClick={buyProduct}>
               Fechar Pedido
             </div>
           </div>
           <p className='text-sm text-neutral-500 mt-6 text-justify'>
-          Faça seu login ou cadastre uma conta e ganhe ao realizar a sua compra. Junte pontos e troque por cupons de desconto em compras futuras em nossa Loja Online.
+            Faça seu login ou cadastre uma conta e ganhe ao realizar a sua compra. Junte pontos e troque por cupons de desconto em compras futuras em nossa Loja Online.
           </p>
         </div>
       </div>

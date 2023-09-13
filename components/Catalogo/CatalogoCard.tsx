@@ -4,6 +4,13 @@ import { IoCheckmark, IoCard } from 'react-icons/io5'
 
 
 const CatalogoCard = ({ content }: { content: any }) => {
+
+  const preco = content.preco;
+  const precoFormatado = preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+  const parcelamento = (content.preco / 12)
+  const parcelamentoFormatado = parcelamento.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
   return (
     <div className='flex gap-2 bg-white p-10 rounded-2xl h-[300px] overflow-hidden mb-4'>
       <Link href={`/buy/${content.subcategoria}-${content.id}`} className='w-full max-w-[200px]'>
@@ -56,8 +63,8 @@ const CatalogoCard = ({ content }: { content: any }) => {
 
       <div className='w-full pl-4'>
         <div className='h-[150px]'>
-          <h1 className='text-xl font-bold'>R${content.preco},00</h1>
-          <h3 className='text-xs'>R${content.preco},00 em 12x R${(content.preco / 12).toFixed(2)} sem juros</h3>
+          <h1 className='text-xl font-bold'>{precoFormatado}</h1>
+          <h3 className='text-xs'>{precoFormatado} em 12x de {parcelamentoFormatado} sem juros</h3>
           <div className='mt-4 flex items-center gap-2'>
             <IoCheckmark size={16} />
             <p className='text-[12px]'>Em estoque</p>

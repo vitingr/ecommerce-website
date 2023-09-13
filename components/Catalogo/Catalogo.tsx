@@ -53,7 +53,7 @@ const Catalogo = ({ type }: catalogo) => {
       )}
     </div>
   ): (
-    <div className="loader"></div>
+    <div className="loader max-w-[950px] w-full"></div>
   )
 }
 

@@ -3,6 +3,13 @@ import React from 'react'
 import { IoCheckmark, IoCard, IoCarOutline } from 'react-icons/io5'
 
 const CellphoneCard = ({ content }: { content: any }) => {
+
+  const preco = content.preco;
+  const precoFormatado = preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+  const parcelamento = (content.preco / 12)
+  const parcelamentoFormatado = parcelamento.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
   return (
     <div className='flex flex-col gap-4 bg-white p-10 rounded-2xl'>
       <div className='flex justify-center w-full h-[175px]'>
@@ -27,8 +34,8 @@ const CellphoneCard = ({ content }: { content: any }) => {
           {content.cor.includes("Rosa") ? (<div className='w-4 h-4 rounded-full bg-fuchsia-400 border border-zinc-500 cursor-pointer' />) : (<></>)}
         </div>
 
-        <h3 className='mt-8 text-xl font-bold'>R${content.preco},00 <span className='text-sm font-normal'>à vista</span></h3>
-        <h5 className='text-sm font-normal'>R${content.preco},00 em 12x R${(content.preco / 12).toFixed(2)} sem juros</h5>
+        <h3 className='mt-8 text-xl font-bold'>{precoFormatado} <span className='text-sm font-normal'>à vista</span></h3>
+        <h5 className='text-sm font-normal'>{precoFormatado},00 em 12x de {parcelamentoFormatado} sem juros</h5>
 
         <ul className='mt-4 ml-5 list-disc'>
           <li className='catalogo-item-list'>O maior avanço em tecnologia de video</li>

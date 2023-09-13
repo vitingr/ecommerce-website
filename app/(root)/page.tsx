@@ -5,11 +5,11 @@ import { DestaqueSm } from "@components";
 import { IoSearchSharp } from 'react-icons/io5'
 import { useEffect, useState } from 'react'
 import Link from "next/link";
+import ToastMessage from '@components/Config/ToastMessage'
 
 export default function Home() {
 
-  const [actualSearchItem1, setActualSeachItem1] = useState("")
-  const [actualSearchItem2, setActualSeachItem2] = useState("https://www.home-designing.com/wp-content/uploads/2018/01/orange-cushions-grey-curtains-dark-living-room.jpg")
+  const [actualSearchItem, setActualSeachItem] = useState("https://www.home-designing.com/wp-content/uploads/2018/01/orange-cushions-grey-curtains-dark-living-room.jpg")
 
   const handleClick = async () => {
 
@@ -17,18 +17,20 @@ export default function Home() {
 
   const getUser = async () => {
     const response = await fetch("/api/user", {
-      method: "POST"
+      method: "POST",
     })
-    console.log(response)
+    if (response.ok) {
+      return
+    }
   }
-  
+
   useEffect(() => {
-    const user = getUser()
-    console.log(user)
+    getUser()
   }, [])
 
   return (
     <main className="w-full p-[5%] flex flex-col justify-center items-center xs:p-[0%]">
+      <ToastMessage />
       <section className="max-w-[1750px] w-full flex flex-col justify-center items-center">
         <div className="w-full h-[750px] rounded-xl main-img" />
 
@@ -67,19 +69,19 @@ export default function Home() {
           <h4 className="big-link">Ver mais...</h4>
         </Link>
 
-        <h1 className="mt-24 mb-20 w-full text-center font-[500] text-5xl cursor-default">Fornecendo <span className="font-[500] text-transparent text-5xl bg-clip-text bg-gradient-to-r from-[#6C47FF] to-[#5BC5EF]">Estilo e Design</span> para mais de<span  className="font-[500] text-transparent text-5xl bg-clip-text bg-gradient-to-r from-[#6C47FF] to-[#5BC5EF]"> 10,000+</span> pessoas</h1>
+        <h1 className="mt-24 mb-20 w-full text-center font-[500] text-5xl cursor-default">Fornecendo <span className="font-[500] text-transparent text-5xl bg-clip-text bg-gradient-to-r from-[#6C47FF] to-[#5BC5EF]">Estilo e Design</span> para mais de<span className="font-[500] text-transparent text-5xl bg-clip-text bg-gradient-to-r from-[#6C47FF] to-[#5BC5EF]"> 10,000+</span> pessoas</h1>
 
       </section>
 
-      <section className="bg-section-tv w-full max-w-[1300px] h-[650px] mt-20 rounded-lg overflow-hidden xs:rounded-md" style={{backgroundImage: `url(${actualSearchItem2})`}}>
+      <section className="bg-section-tv w-full max-w-[1300px] h-[650px] mt-20 rounded-lg overflow-hidden xs:rounded-md" style={{ backgroundImage: `url(${actualSearchItem})` }}>
         <div className="text-center mt-12 text-3xl text-white font-bold">
           <h1 className="text-white">Eletrodomésticos</h1>
           <div className="flex justify-center mt-4 gap-10 nav-main-white overflow-hidden xs:gap-6">
-            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem2("https://www.home-designing.com/wp-content/uploads/2018/01/orange-cushions-grey-curtains-dark-living-room.jpg")}>Neo QLED 8K</h4>
-            <h4 className="cursor-pointer text-lg xs:text-xs text-white"onClick={() => setActualSeachItem2("https://images.samsung.com/is/image/samsung/assets/br/home/banners_home_windfree_blackedition_1440x810.jpg?$1440_810_JPG$")}>WindFree Black Edition</h4>
-            <h4 className="cursor-pointer text-lg xs:text-xs text-white"onClick={() => setActualSeachItem2("https://images.samsung.com/is/image/samsung/assets/br/homepage/hp/SMG_JetBotAI_Banner_Desktop_20220429.jpg?$1440_810_JPG$")}>Jet Bot AI+</h4>
-            <h4 className="cursor-pointer text-lg xs:text-xs text-white"onClick={() => setActualSeachItem2("https://images.samsung.com/is/image/samsung/assets/br/home/GBM-QDrive-PC.jpg?$1440_810_JPG$")}>Quickdrive</h4>
-            <h4 className="cursor-pointer text-lg xs:text-xs text-white"onClick={() => setActualSeachItem2("https://image.lexica.art/full_jpg/f7f7913a-d1c2-495d-811a-8debc5ce40bc")}>The Frame</h4>
+            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem("https://www.home-designing.com/wp-content/uploads/2018/01/orange-cushions-grey-curtains-dark-living-room.jpg")}>Neo QLED 8K</h4>
+            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem("https://images.samsung.com/is/image/samsung/assets/br/home/banners_home_windfree_blackedition_1440x810.jpg?$1440_810_JPG$")}>WindFree Black Edition</h4>
+            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem("https://images.samsung.com/is/image/samsung/assets/br/homepage/hp/SMG_JetBotAI_Banner_Desktop_20220429.jpg?$1440_810_JPG$")}>Jet Bot AI+</h4>
+            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem("https://images.samsung.com/is/image/samsung/assets/br/home/GBM-QDrive-PC.jpg?$1440_810_JPG$")}>Quickdrive</h4>
+            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem("https://image.lexica.art/full_jpg/f7f7913a-d1c2-495d-811a-8debc5ce40bc")}>The Frame</h4>
           </div>
         </div>
 

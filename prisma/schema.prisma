@@ -22,6 +22,7 @@ model User {
   admin        Int?
   foto         String?
   compras      Int?
+  saldo        Int?
 }
 
 model Refrigerator {
@@ -212,4 +213,21 @@ model Gadget {
   desconto     Int?
   tipo         String?
   foto         String?
+}
+
+model Coupon {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  name  String?
+  value Int?
+  usage Int?
+  users String?
+}
+
+model Purchase {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String?
+  productId String?
+  data      DateTime? @default(now())
+  cupom     String?
+  value     Int?
 }

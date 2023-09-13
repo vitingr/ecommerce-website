@@ -27,16 +27,15 @@ export const POST = async ({ params }: getInterface) => {
           }
         })
 
-        return new Response(JSON.stringify(user), {status: 200})
+        return new Response(JSON.stringify(user), { status: 200 })
 
       } catch (error) {
-        console.log(error)
-        return new Response("ERRO! Não foi possível criar o usuário", {status: 500})
+        return new Response("ERRO! Não foi possível criar o usuário", { status: 500 })
       }
+    } else {
+      return new Response(JSON.stringify(user), { status: 200 })
     }
-
   } catch (error) {
-    console.log(error)
-    return new Response("ERRO! Não foi possível encontrar o usuário", {status: 500})
+    return new Response("ERRO! Não foi possível encontrar o usuário", { status: 500 })
   }
 } 

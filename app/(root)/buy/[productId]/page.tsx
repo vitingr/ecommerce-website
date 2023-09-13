@@ -12,6 +12,8 @@ const page = () => {
   const query = pathname[2]
 
   const [data, setData] = useState<any>([])
+  const [preco, setPreco] = useState<any>("")
+  const [parcelamento, setParcelamento] = useState<any>("")
 
   const getData = async () => {
     const result = await fetch(`/api/products/${query}`)
@@ -22,6 +24,12 @@ const page = () => {
   useEffect(() => {
     if (query) {
       getData()
+      console.log(data)
+      if (data.preco !== undefined) {
+        console.log(data.preco)
+        setPreco(data.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+        setParcelamento((data.preco / 12).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+      }
     }
   }, [query])
 
@@ -32,8 +40,8 @@ const page = () => {
           <h2 className='text-white text-3xl font-bold w-full flex justify-center'>{data.nome}</h2>
           <div className='flex items-center justify-center gap-6 w-full'>
             <div className='flex flex-col text-right w-full'>
-              <h3 className='text-white font-extralight text-xs'>Por <span className='font-bold text-base text-white'>R${data.preco},00</span> à vista</h3>
-              <h5 className='text-white font-extralight text-xs'>ou 12x de <span className='font-bold text-base text-white'>R${(data.preco / 12).toFixed(2)},00</span> nos demais cartões</h5>
+              <h3 className='text-white font-extralight text-xs'>Por <span className='font-bold text-base text-white'>{preco}</span> à vista</h3>
+              <h5 className='text-white font-extralight text-xs'>ou 12x de <span className='font-bold text-base text-white'>{parcelamento}</span> nos demais cartões</h5>
             </div>
             <Link href={`/buy/${query}/confirm`}>
               <div className='bg-blue-400 text-white rounded-full p-2 w-[200px] text-center cursor-pointer hover:bg-blue-500 transition-all duration-300 font-bold'>
@@ -137,8 +145,8 @@ const page = () => {
 
               </div>
               <div className='rounded-xl'>
-                <h4 className='text-2xl'>R$ {data.preco},00</h4>
-                <p>ou 12x de R${(data.preco / 12).toFixed(2)} vezes sem juros</p>
+                <h4 className='text-2xl'>{preco}</h4>
+                <p>ou 12x de {parcelamento} vezes sem juros</p>
                 <Link href={`/buy/${query}/confirm`}>
                   <div className='bg-[#262f40] mt-4 cursor-pointer font-bold text-center text-white w-full p-[7.5px] rounded-full hover:bg-[#1d2430] transition-all duration-200'>
                     Comprar
