@@ -15,6 +15,9 @@ const Navbar = () => {
           </h1>
         </Link>
         <ul className='nav-list flex items-center'>
+        <Link href="/">
+            <li>Início</li>
+          </Link>
           <Link href="/catalogo/cellphones">
             <li>Celulares</li>
           </Link>
@@ -27,9 +30,6 @@ const Navbar = () => {
           <Link href="/catalogo/gadgets">
             <li>Acessórios</li>
           </Link>
-          <Link href="#">
-            <li>Smart Things</li>
-          </Link>
         </ul>
         <div className='flex items-center gap-6'>
           <div className='flex gap-4 justify-center items-center bg-[#eceff1] rounded-sm p-2 max-h-8'>
@@ -37,7 +37,9 @@ const Navbar = () => {
             <IoSearchSharp size={20} className='cursor-pointer text-[#c9ccce]' />
           </div>
           <UserButton afterSignOutUrl="/" />
-          <IoBagSharp size={20} className='cursor-pointer text-[#c9ccce] icon-nav' />
+          <Link href="/cart">
+            <IoBagSharp size={20} className='cursor-pointer text-[#c9ccce] icon-nav' />
+          </Link>
           <IoHeartSharp size={20} className='cursor-pointer text-[#c9ccce] icon-nav' />
           <Link href="/admin/createProduct">
             <IoSettingsSharp size={20} className='cursor-pointer text-[#c9ccce] icon-nav' />

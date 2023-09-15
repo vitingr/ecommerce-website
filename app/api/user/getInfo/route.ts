@@ -2,7 +2,7 @@ import { currentUser } from '@clerk/nextjs'
 import prisma from '@lib/database/prismadb'
 import { getInterface } from '@types'
 
-export const POST = async ({ params }: getInterface) => {
+export const GET = async ({ params }: getInterface) => {
   try {
     const user = await currentUser()
 

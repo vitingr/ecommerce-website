@@ -92,6 +92,7 @@ export const GET = async (request: Request, {params}: getInterface) => {
         }
       })
     }
+
     return new Response(JSON.stringify(item), {status: 200})
   } catch (error) {
     console.log(error)

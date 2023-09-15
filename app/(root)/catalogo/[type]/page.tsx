@@ -18,7 +18,7 @@ const page = () => {
         <p className='mt-2 text-sm text-white'>Troque os eletrodomésticos antigos de sua casa</p>
       </div>
       {query ? (
-        <div className='w-full flex justify-center gap-14'>
+        <div className='w-full max-w-[1350px] flex justify-center gap-14'>
           <Sidebar type={query} />
           <Catalogo type={query} />
         </div>

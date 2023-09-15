@@ -224,10 +224,11 @@ model Coupon {
 }
 
 model Purchase {
-  id        String    @id @default(auto()) @map("_id") @db.ObjectId
-  userId    String?
-  productId String?
-  data      DateTime? @default(now())
-  cupom     String?
-  value     Int?
+  id              String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId          String?
+  productId       String?
+  productCategory String?
+  data            DateTime? @default(now())
+  cupom           String?
+  value           Int?
 }
