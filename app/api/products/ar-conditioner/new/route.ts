@@ -10,11 +10,11 @@ export const POST = async (request: Request) => {
       const newAirConditioner = await prisma.airConditioner.create({
         data: {
           nome: form.nome,
-          preco: form.preco,
-          desconto: form.desconto,
+          preco: Number(form.preco),
+          desconto: Number(form.desconto),
           cor: form.cor,
           classe: form.classe,
-          capacidade: form.capacidade,
+          capacidade: Number(form.capacidade),
           tecnologia: form.tecnologia,
           linha: form.linha,
           linhaUltra: form.linhaUltra,

@@ -10,8 +10,8 @@ export const POST = async (request: Request) => {
       const newSmartWatch = await prisma.smartWatch.create({
         data: {
           nome: form.nome,
-          preco: form.preco,
-          desconto: form.desconto,
+          preco: Number(form.preco),
+          desconto: Number(form.desconto),
           tamanho: form.tamanho,
           conectividade: form.conectividade,
           material: form.material,

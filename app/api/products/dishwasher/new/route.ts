@@ -10,8 +10,8 @@ export const POST = async (request: Request) => {
       const newDishwasher = await prisma.dishwashers.create({
         data: {
           nome: form.nome,
-          preco: form.preco,
-          desconto: form.desconto,
+          preco: Number(form.preco),
+          desconto: Number(form.desconto),
           cor: form.cor,
           capacidade: form.capacidade,
           foto: image

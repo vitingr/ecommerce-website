@@ -10,8 +10,8 @@ export const POST = async (request: Request) => {
       const newKeyboard = await prisma.keyboard.create({
         data: {
           nome: form.nome,
-          preco: form.preco,
-          desconto: form.desconto,
+          preco: Number(form.preco),
+          desconto: Number(form.desconto),
           cor: form.cor,
           tipo: form.tipo,
           layout: form.layout,

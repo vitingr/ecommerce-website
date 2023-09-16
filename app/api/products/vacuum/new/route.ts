@@ -10,8 +10,8 @@ export const POST = async (request: Request) => {
       const newVacuum = await prisma.vacuum.create({
         data: {
           nome: form.nome,
-          preco: form.preco,
-          desconto: form.desconto,
+          preco: Number(form.preco),
+          desconto: Number(form.desconto),
           cor: form.cor,
           recursos: form.recursos,
           foto: image

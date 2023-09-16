@@ -37,13 +37,21 @@ export default function Home() {
         <h1 className="text-center mt-20 text-4xl font-bold">Destaques</h1>
         <div className="flex justify-center mt-8 gap-8 nav-main xs:gap-4">
           <h4 className="cursor-pointer underline underline-offset-4 text-lg xs:text-xs">Novidades</h4>
-          <h4 className="cursor-pointer text-lg xs:text-xs">Mobile</h4>
-          <h4 className="cursor-pointer text-lg xs:text-xs">TVs</h4>
+          <Link href={"/catalogo/cellphone"}>
+            <h4 className="cursor-pointer text-lg xs:text-xs">Mobile</h4>
+          </Link>
+          <Link href={"/catalogo/television"}>
+            <h4 className="cursor-pointer text-lg xs:text-xs">TVs</h4>
+          </Link>
           <Link href="/catalogo/home-appliences">
             <h4 className="cursor-pointer text-lg xs:text-xs">Eletrodomésticos</h4>
           </Link>
-          <h4 className="cursor-pointer text-lg xs:text-xs">Informática</h4>
-          <h4 className="cursor-pointer text-lg xs:text-xs">Combos</h4>
+          <Link href={"/catalogo/notebook"}>
+            <h4 className="cursor-pointer text-lg xs:text-xs">Informática</h4>
+          </Link>
+          <Link href={"/catalogo/gadgets"}>
+            <h4 className="cursor-pointer text-lg xs:text-xs">Acessórios</h4>
+          </Link>
         </div>
 
         <div className="flex justify-center mt-8 gap-4 w-full destaques-container xs:p-[3%]">

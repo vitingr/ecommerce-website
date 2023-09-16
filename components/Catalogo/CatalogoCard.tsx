@@ -20,37 +20,37 @@ const CatalogoCard = ({ content }: { content: any }) => {
       </Link>
       <div className='w-full border-r border-gray-300'>
         <h1 className='font-bold text-[14px]'>{content.nome}</h1>
-        <h4 className='mt-1 text-sm'>Cor: {content.cor}</h4>
-        <div className='mt-2 flex gap-5'>
-          {content.cor.includes("Branco") ? (
-            <div className='w-4 h-4 rounded-full bg-white border border-zinc-500 cursor-pointer' />
-          ) : (
-            <></>
-          )}
-          {content.cor.includes("Preto") ? (
-            <div className='w-4 h-4 rounded-full bg-zinc-950 border border-zinc-500 cursor-pointer' />
-          ) : (
-            <></>
-          )}
-          {content.cor.includes("Inbox / Prata") ? (
-            <div className='w-4 h-4 rounded-full bg-gray-200 border border-zinc-500 cursor-pointer' />
-          ) : (
-            <></>
-          )}
-          {content.cor.includes("Cinza Acetinado") ? (
-            <div className='w-4 h-4 rounded-full bg-slate-500 border border-zinc-500 cursor-pointer' />
-          ) : (
-            <></>
-          )}
-        </div>
+        {content.cor ? (
+          <>
+            <h4 className='mt-1 text-sm'>Cor: {content.cor}</h4>
+            <div className='mt-2 flex gap-5'>
+              {content.cor.includes("Branco") ? (
+                <div className='w-4 h-4 rounded-full bg-white border border-zinc-500 cursor-pointer' />) : (<></>)}
+              {content.cor.includes("Preto") ? (
+                <div className='w-4 h-4 rounded-full bg-zinc-950 border border-zinc-500 cursor-pointer' />) : (<></>)}
+              {content.cor.includes("Inbox / Prata") ? (
+                <div className='w-4 h-4 rounded-full bg-gray-200 border border-zinc-500 cursor-pointer' />) : (<></>)}
+              {content.cor.includes("Cinza Acetinado") ? (
+                <div className='w-4 h-4 rounded-full bg-slate-500 border border-zinc-500 cursor-pointer' />) : (<></>)}
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
         <div className='mt-4 flex gap-6'>
-          {content.voltagem === "Bivolt" ? (
-            <>
-              <span className='flex items-center pl-2 pr-2 border-2 text-center rounded-3xl text-xs'>127 V</span>
-              <span className='flex items-center pl-2 pr-2 border-2 text-center rounded-3xl text-xs'>220 V</span>
-            </>
+          {content.voltagem ? (
+            <div>
+              {content.voltagem === "Bivolt" ? (
+                <>
+                  <span className='flex items-center pl-2 pr-2 border-2 text-center rounded-3xl text-xs'>127 V</span>
+                  <span className='flex items-center pl-2 pr-2 border-2 text-center rounded-3xl text-xs'>220 V</span>
+                </>
+              ) : (
+                <span className='flex items-center pl-2 pr-2 border-2 text-center rounded-3xl text-xs'>{content.voltagem}</span>
+              )}
+            </div>
           ) : (
-            <span className='flex items-center pl-2 pr-2 border-2 text-center rounded-3xl text-xs'>{content.voltagem}</span>
+            <></>
           )}
         </div>
         <ul className='mt-4 ml-5 list-disc'>

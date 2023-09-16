@@ -10,11 +10,11 @@ export const POST = async (request: Request) => {
       const newGeladeira = await prisma.refrigerator.create({
         data: {
           nome: form.nome,
-          preco: form.preco,
-          desconto: form.desconto,
+          preco: Number(form.preco),
+          desconto: Number(form.desconto),
           cor: form.cor,
           modelo: form.modelo,
-          capacidade: form.capacidade,
+          capacidade: Number(form.capacidade),
           voltagem: form.voltagem,
           numPortas: form.numeroPortas,
           display: form.display,

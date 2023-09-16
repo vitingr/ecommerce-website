@@ -10,8 +10,8 @@ export const POST = async (request: Request) => {
       const newNotebook = await prisma.notebook.create({
         data: {
           nome: form.nome,
-          preco: form.preco,
-          desconto: form.desconto,
+          preco: Number(form.preco),
+          desconto: Number(form.desconto),
           sistema: form.sistema,
           armazenamento: form.armazenamento,
           memoria: form.memoria,

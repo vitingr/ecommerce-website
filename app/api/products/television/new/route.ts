@@ -10,8 +10,8 @@ export const POST = async (request: Request) => {
       const newTelevision = await prisma.television.create({
         data: {
           nome: form.nome,
-          preco: form.preco,
-          desconto: form.desconto,
+          preco: Number(form.preco),
+          desconto: Number(form.desconto),
           tipo: form.tipo,
           tamanhoTela: form.tamanhoTela,
           resolucao: form.resolucao,
