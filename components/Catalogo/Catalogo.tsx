@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import CatalogoCard from './CatalogoCard'
 import CellphoneCard from './CellphoneCard'
 
-const Catalogo = ({ type }: catalogo) => {
+const Catalogo = ({ type, method }: catalogo) => {
 
   const [data, setData] = useState([])
 
@@ -14,11 +14,25 @@ const Catalogo = ({ type }: catalogo) => {
     const responseProduct = await searchProduct.json()
     setData(responseProduct)
   }
+
+  const handleSearch = async () => {
+    const result = await fetch(`/api/products/search/${type}`)
+    const response = await result.json()
+    setData(response)
+  }
+
   useEffect(() => {
     if (type !== "") {
-      fetchData()
+      if (method === "search") {
+        if (type !== undefined && type !== null) {
+          handleSearch()
+        }
+      } else {
+        console.log("B")
+        fetchData()
+      }
     }
-  }, [type])  
+  }, [type])
 
   return data.length > 0 ? (
     <div className='max-w-[950px] w-full'>
@@ -52,8 +66,8 @@ const Catalogo = ({ type }: catalogo) => {
         </div>
       )}
     </div>
-  ): (
-    <div className="loader"/>
+  ) : (
+    <div className="loader" />
   )
 }
 

@@ -141,7 +141,7 @@ export const createArCondicionado = [
     name: "Cor",
     type: "checkbox",
     options: [
-      { title: "Branca" },
+      { title: "Branco" },
       { title: "Preto" },
       { title: "Cinza Acetinado" },
     ]
@@ -188,15 +188,8 @@ export const createArCondicionado = [
   {
     option: "capacidade",
     name: "Capacidade",
-    type: "select",
-    options: [
-      { title: "5.000 a 10.000" },
-      { title: "7.000 a 10.000" },
-      { title: "11.000 a 15.000" },
-      { title: "16.000 a 20.000" },
-      { title: "21.000 a 30.000" },
-      { title: "31.000 a 50.000" },
-    ]
+    type: "number",
+    options: []
   },
   {
     option: "ciclo",
@@ -247,21 +240,17 @@ export const createMaquinaLavar = [
   {
     option: "capacidade",
     name: "Capacidade",
-    type: "select",
-    options: [
-      { title: "Até 10kg" },
-      { title: "de 10.1 até 15kg" },
-      { title: "Acima de 15.1kg" },
-    ]
+    type: "number",
+    options: []
   },
   {
     option: "cor",
     name: "Cores",
     type: "select",
     options: [
-      { title: "Black" },
-      { title: "Branca" },
-      { title: "Inox Look" },
+      { title: "Preto" },
+      { title: "Branco" },
+      { title: "Inbox / Prata" },
     ]
   },
   {
@@ -303,13 +292,19 @@ export const createLavaLoucas = [
   {
     option: "capacidade",
     name: "Capacidade",
+    type: "number",
+    options: []
+  },
+  {
+    option: "cor",
+    name: "Cores",
     type: "select",
     options: [
-      { title: "10 serviços" },
-      { title: "14 serviços" },
+      { title: "Preto" },
+      { title: "Branco" },
+      { title: "Inbox / Prata" },
     ]
-  },
-  
+  }, 
 ]
 
 export const createAspirador = [
@@ -337,6 +332,16 @@ export const createAspirador = [
     type: "number",
     options: []
   },
+  {
+    option: "cor",
+    name: "Cores",
+    type: "select",
+    options: [
+      { title: "Preto" },
+      { title: "Branco" },
+      { title: "Inbox / Prata" },
+    ]
+  }, 
   {
     option: "recursos",
     name: "Recursos",
@@ -736,7 +741,7 @@ export const createTV = [
   },
   {
     option: "tipo",
-    name: "Tipo do Monitor",
+    name: "Tipo do Tela",
     type: "select",
     options: [
       { title: "Neo QLED" },

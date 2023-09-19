@@ -35,7 +35,7 @@ const Upload = ({ setState, form }: Props) => {
           Envie uma Imagem do produto
         </label>
       ) : (
-        <img className='w-[500px] h-[400px]' src={form.photo} alt="Image" />
+        <img className='max-w-[500px] max-h-[400px]' src={form.photo} alt="Image" />
       )}
       <input type="file" name="image" id="image" accept='image/*' onChange={(e) => handleChangeImage(e)} className='absolute z-30 w-[500px] opacity-0 h-[400px] cursor-pointer' required />
     </div>

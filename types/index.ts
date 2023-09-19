@@ -14,6 +14,7 @@ export interface sidebar {
 
 export interface catalogo {
   type: String;
+  method?: String;
 }
 
 export interface optionsCreateProduct {
@@ -40,6 +41,8 @@ export interface destaquesInfoCellphone {
 }
 
 export interface FormState {
+  categoria: string;
+  subcategoria: string;
   nome: string;
   descricao: string;
   preco: number;

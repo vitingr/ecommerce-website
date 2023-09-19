@@ -6,13 +6,24 @@ import { IoSearchSharp } from 'react-icons/io5'
 import { useEffect, useState } from 'react'
 import Link from "next/link";
 import ToastMessage from '@components/Config/ToastMessage'
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+
+
+  const [searchText, setSearchText] = useState<String>("")
+  const [data, setData] = useState([])
+  const router = useRouter()
 
   const [actualSearchItem, setActualSeachItem] = useState("https://www.home-designing.com/wp-content/uploads/2018/01/orange-cushions-grey-curtains-dark-living-room.jpg")
 
   const handleClick = async () => {
 
+  }
+
+  const handleSearch = async () => {
+		const query = searchText.replace(" ", "-")
+    router.push(`/catalogo/search/${query}`)
   }
 
   const getUser = async () => {
@@ -104,10 +115,15 @@ export default function Home() {
 
       <section className="w-full flex justify-center flex-col items-center mt-[10rem]">
         <h2 className="text-3xl font-bold">Procurando algo mais?</h2>
-        <label className="flex items-center rounded-full border-2 p-4 h-[45px] w-[400px] border-gray-300 mt-4 gap-4">
-          <IoSearchSharp size={20} className="text-zinc-500 cursor-pointer" />
-          <input type="text" name="algo-mais" id="algo-mais" className="outline-none bg-transparent text-zinc-500" />
-        </label>
+        <form onSubmit={(e: React.SyntheticEvent) => {
+          e.preventDefault()
+          handleSearch()
+        }}>
+          <label className="flex items-center rounded-full border-2 p-4 h-[45px] w-[400px] border-gray-300 mt-4 gap-4">
+            <IoSearchSharp size={20} className="text-zinc-500 cursor-pointer" />
+            <input type="text" name="algo-mais" id="algo-mais" className="outline-none bg-transparent text-zinc-500" onChange={(e) => setSearchText(e.target.value)} />
+          </label>
+        </form>
       </section>
 
     </main>

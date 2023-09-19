@@ -24,14 +24,12 @@ const page = () => {
   useEffect(() => {
     if (query) {
       getData()
-      console.log(data)
       if (data.preco !== undefined) {
-        console.log(data.preco)
         setPreco(data.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
         setParcelamento((data.preco / 12).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
       }
     }
-  }, [query])
+  }, [query, data])
 
   return data.nome !== undefined ? (
     <div>
@@ -59,7 +57,7 @@ const page = () => {
           </div>
           <div className='flex'>
             <div className='max-w-[500px] w-full flex flex-col items-center'>
-              <img src={data.foto} alt="Product Photo" className='max-w-[500px] w-full cursor-pointer transition-all duration-300 hover:scale-110' />
+              <img src={data.foto} alt="Product Photo" className='max-w-[500px] w-full cursor-pointer transition-all duration-300 hover:scale-105' />
             </div>
 
             <div className='flex flex-col'>

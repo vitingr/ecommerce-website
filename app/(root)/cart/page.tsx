@@ -10,11 +10,14 @@ const page = () => {
   const getData = async () => {
     const result = await fetch("/api/user/getInfo")
     const response = await result.json()
-    setData(response)
+    return response
   }
 
   useEffect(() => {
-    getData()
+    if (data.length === 0) {
+      const result = getData()
+      setData(result)
+    }
   }, [])
 
   return (

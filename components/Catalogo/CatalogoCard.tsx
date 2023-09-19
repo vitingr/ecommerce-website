@@ -15,11 +15,12 @@ const CatalogoCard = ({ content }: { content: any }) => {
     <div className='flex gap-2 bg-white p-10 rounded-2xl h-[300px] overflow-hidden mb-4'>
       <Link href={`/buy/${content.subcategoria}-${content.id}`} className='w-full max-w-[200px]'>
         <div className='w-full flex items-center justify-center'>
-          <img src={content.foto} alt="option photo" className='w-[275px]' />
+          <img src={content.foto} alt="option photo" className='max-w-[275px] transition-all duration-300 hover:scale-110' />
         </div>
       </Link>
       <div className='w-full border-r border-gray-300'>
         <h1 className='font-bold text-[14px]'>{content.nome}</h1>
+        <h5 className='text-neutral-400 text-xs mb-4'>{content.id}</h5>
         {content.cor ? (
           <>
             <h4 className='mt-1 text-sm'>Cor: {content.cor}</h4>
@@ -39,7 +40,7 @@ const CatalogoCard = ({ content }: { content: any }) => {
         )}
         <div className='mt-4 flex gap-6'>
           {content.voltagem ? (
-            <div>
+            <div className='flex gap-4'>
               {content.voltagem === "Bivolt" ? (
                 <>
                   <span className='flex items-center pl-2 pr-2 border-2 text-center rounded-3xl text-xs'>127 V</span>
@@ -63,7 +64,7 @@ const CatalogoCard = ({ content }: { content: any }) => {
 
       <div className='w-full pl-4'>
         <div className='h-[150px]'>
-          <h1 className='text-xl font-bold'>{precoFormatado}</h1>
+          <h1 className='text-xl font-bold'>{precoFormatado}</h1> 
           <h3 className='text-xs'>{precoFormatado} em 12x de {parcelamentoFormatado} sem juros</h3>
           <div className='mt-4 flex items-center gap-2'>
             <IoCheckmark size={16} />

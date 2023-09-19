@@ -13,7 +13,7 @@ export const POST = async (request: Request) => {
           preco: Number(form.preco),
           desconto: Number(form.desconto),
           cor: form.cor,
-          capacidade: form.capacidade,
+          capacidade: Number(form.capacidade),
           foto: image
         }
       })

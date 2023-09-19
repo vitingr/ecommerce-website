@@ -57,7 +57,7 @@ const page = () => {
         </Link>
       </section>
 
-      <h1 className="mt-[200px] pb-[100px] border-b border-zinc-100 w-full text-center font-[500] text-5xl">Fornecendo <span className="font-[500] text-transparent text-5xl bg-clip-text bg-gradient-to-r from-[#6C47FF] to-[#5BC5EF]">Estilo e Design</span> para mais de<span  className="font-[500] text-transparent text-5xl bg-clip-text bg-gradient-to-r from-[#6C47FF] to-[#5BC5EF]"> 10,000+</span> pessoas</h1>
+      <h1 className="mt-[200px] pb-[100px] border-b border-zinc-100 w-full text-center font-[500] text-5xl cursor-default">Fornecendo <span className="font-[500] text-transparent text-5xl bg-clip-text bg-gradient-to-r from-[#6C47FF] to-[#5BC5EF] cursor-default">Estilo e Design</span> para mais de<span className="font-[500] text-transparent text-5xl bg-clip-text bg-gradient-to-r from-[#6C47FF] to-[#5BC5EF]"> 10,000+</span> pessoas</h1>
 
       <section className='mt-20'>
         <h1 className="text-center text-4xl font-bold">Mais Vendidos</h1>
@@ -89,9 +89,11 @@ const page = () => {
         <div className='pl-[10%]'>
           <h1 className='drop-shadow-2xl text-white text-7xl font-bold'>Sua Cozinha Moderna</h1>
           <p className='drop-shadow-md text-white text-2xl italic font-extralight'>Veja nossos refrigeradores</p>
-          <div className='bg-white text-center text-black rounded-full pt-2 pb-2 mt-4 w-[200px] cursor-pointer'>
-            Ver Refrigeradores
-          </div>
+          <Link href="/catalogo/refrigerator">
+            <div className='bg-white text-center text-black rounded-full pt-2 pb-2 mt-4 w-[200px] cursor-pointer'>
+              Ver Refrigeradores
+            </div>
+          </Link>
         </div>
       </section>
 

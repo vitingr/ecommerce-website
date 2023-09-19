@@ -12,7 +12,7 @@ export const options = {
   "keyboard": tecladoFilter,
   "notebook": notebookFilter,
   "smartWatch": smartWatchFilter,
-  "tv": tvFilter,
+  "television": tvFilter,
 };
 
 export const createOptions = {
@@ -26,6 +26,6 @@ export const createOptions = {
   "keyboard": createTeclado,
   "notebook": createNotebook,
   "smart-watch": createSmartWatch,
-  "tv": createTV,
+  "television": createTV,
   "gadget": createAcessorio
 }

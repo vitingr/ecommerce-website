@@ -15,7 +15,7 @@ export const GET = async (request: Request, {params}: getInterface) => {
         }
       })
     }
-    if (query[0] === "air-conditioners") {
+    if (query[0] === "airConditioners") {
       item = await prisma.airConditioner.findUnique({
         where: {
           id: query[1]
@@ -57,7 +57,7 @@ export const GET = async (request: Request, {params}: getInterface) => {
         }
       })
     }
-    if (query[0] === "smart-watches") {
+    if (query[0] === "smartWatches") {
       item = await prisma.smartWatch.findUnique({
         where: {
           id: query[1]

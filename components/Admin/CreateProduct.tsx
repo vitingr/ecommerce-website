@@ -12,7 +12,11 @@ import FormField from '@components/FormField'
 
 const CreateProduct = ({ type }: { type: string }) => {
 
+  const [categoria, setCategoria] = useState("")
+
   const [form, setForm] = useState<FormState>({
+    categoria: categoria,
+    subcategoria: type,
     nome: "",
     descricao: "",
     preco: 0,
@@ -49,6 +53,27 @@ const CreateProduct = ({ type }: { type: string }) => {
     layout: ""
   })
 
+  const checkCategoria = async () => {
+    if (type === "dishwasher" || type === "refrigerator" || type === "washmachine" || type === "vacuum" || type === "air-conditioner") {
+      setCategoria("home-appliences")
+    }
+    if (type === "cellphone" || type === "tablet") {
+      setCategoria("cellphones")
+    }
+    if (type === "keyboard" || type === "monitor" || type === "television") {
+      setCategoria("technologies")
+    }
+    if (type === "smart-watch") {
+      setCategoria("gadget")
+    }
+  }
+
+  useEffect(() => {
+    if (type) {
+      checkCategoria()
+    }
+  }, [type])
+
   const [photo, setPhoto] = useState("")
 
   const createProduct = async () => {
@@ -60,7 +85,7 @@ const CreateProduct = ({ type }: { type: string }) => {
           path: form.photo
         })
       })
-      
+
       if (imageUpload.ok) {
         photoCloudinary = await imageUpload.json()
         try {
@@ -78,14 +103,14 @@ const CreateProduct = ({ type }: { type: string }) => {
           }
         } catch (error) {
           throw error
-        } 
+        }
       }
     } catch (error) {
       throw error
     }
   }
 
-  const search: {key?: string} = {
+  const search: { key?: string } = {
     key: String(type)
   }
 
@@ -123,7 +148,7 @@ const CreateProduct = ({ type }: { type: string }) => {
         e.preventDefault()
         createProduct()
       }}>
-        {query.map((item:any) => (
+        {query.map((item: any) => (
           <FormField item={item} setState={(value: any) => handleStateChange(item.option, value)} checkItem={(value: any) => handleCheckChange(item.option, value)} key={item.name} />
         ))}
         <Upload form={form} setState={(value: any) => handleStateChange("photo", value)} />
