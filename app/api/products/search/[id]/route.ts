@@ -7,8 +7,9 @@ export const GET = async (request: Request, { params }: getInterface) => {
     let items: any = []
     const query = params.id.split("-").join(" ")
 
-    const airConditioners = await prisma.airConditioner.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+
+    const airConditioners = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "air-conditioner" }
     })
     if (airConditioners.length > 0) {
       airConditioners.forEach((item) => {
@@ -16,8 +17,8 @@ export const GET = async (request: Request, { params }: getInterface) => {
       })
     }
 
-    const cellphones = await prisma.cellphone.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+    const cellphones = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "cellphone" }
     })
     if (cellphones.length > 0) {
       cellphones.forEach((item) => {
@@ -25,96 +26,96 @@ export const GET = async (request: Request, { params }: getInterface) => {
       })
     }
 
-    const dishwashers = await prisma.dishwashers.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+    const dishwashers = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "dishwasher" }
     })
-    if (cellphones.length > 0) {
-      cellphones.forEach((item) => {
+    if (dishwashers.length > 0) {
+      dishwashers.forEach((item) => {
         items.push(item)
       })
     }
 
-    const gadgets = await prisma.gadget.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+    const gadgets = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "gadget" }
     })
-    if (cellphones.length > 0) {
-      cellphones.forEach((item) => {
+    if (gadgets.length > 0) {
+      gadgets.forEach((item) => {
         items.push(item)
       })
     }
-    const keyboards = await prisma.keyboard.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+    const keyboards = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "keyboard" }
     })
-    if (cellphones.length > 0) {
-      cellphones.forEach((item) => {
-        items.push(item)
-      })
-    }
-
-    const monitors = await prisma.monitor.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
-    })
-    if (cellphones.length > 0) {
-      cellphones.forEach((item) => {
+    if (keyboards.length > 0) {
+      keyboards.forEach((item) => {
         items.push(item)
       })
     }
 
-    const notebooks = await prisma.notebook.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+    const monitors = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "monitor" }
     })
-    if (cellphones.length > 0) {
-      cellphones.forEach((item) => {
+    if (monitors.length > 0) {
+      monitors.forEach((item) => {
         items.push(item)
       })
     }
 
-    const refrigeratos = await prisma.refrigerator.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+    const notebooks = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "notebook" }
     })
-    if (cellphones.length > 0) {
-      cellphones.forEach((item) => {
+    if (notebooks.length > 0) {
+      notebooks.forEach((item) => {
         items.push(item)
       })
     }
 
-    const smartWatches = await prisma.smartWatch.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+    const refrigerators = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "refrigerator" }
     })
-    if (cellphones.length > 0) {
-      cellphones.forEach((item) => {
+    if (refrigerators.length > 0) {
+      refrigerators.forEach((item) => {
         items.push(item)
       })
     }
 
-    const televisions = await prisma.television.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+    const smartWatches = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "smart-watch" }
     })
-    if (cellphones.length > 0) {
-      cellphones.forEach((item) => {
+    if (smartWatches.length > 0) {
+      smartWatches.forEach((item) => {
         items.push(item)
       })
     }
 
-    const vacuums = await prisma.vacuum.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+    const televisions = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "television" }
     })
-    if (cellphones.length > 0) {
-      cellphones.forEach((item) => {
+    if (televisions.length > 0) {
+      televisions.forEach((item) => {
         items.push(item)
       })
     }
 
-    const washMachines = await prisma.washMachines.findMany({
-      where: { nome: { contains: query, mode: 'insensitive' } }
+    const vacuums = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "vacuum" }
     })
-    if (cellphones.length > 0) {
-      cellphones.forEach((item) => {
+    if (vacuums.length > 0) {
+      vacuums.forEach((item) => {
+        items.push(item)
+      })
+    }
+
+    const washMachines = await prisma.product.findMany({
+      where: { nome: { contains: query, mode: 'insensitive' }, subcategoria: "washmachine" }
+    })
+    if (washMachines.length > 0) {
+      washMachines.forEach((item) => {
         items.push(item)
       })
     }  
 
-    return new Response(JSON.stringify(items), { status: 500 })
+    return new Response(JSON.stringify(items), { status: 200 })
 
   } catch (error) {
     console.log(error)

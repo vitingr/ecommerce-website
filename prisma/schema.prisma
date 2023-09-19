@@ -25,196 +25,6 @@ model User {
   saldo        Int?
 }
 
-model Refrigerator {
-  id           String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria    String  @default("home-appliences")
-  subcategoria String  @default("refrigerators")
-  nome         String? @unique
-  descricao    String?
-  preco        Float?
-  desconto     Int?
-  cor          String?
-  modelo       String?
-  capacidade   Int?
-  voltagem     String?
-  numPortas    String?
-  display      String?
-  puxador      String?
-  recursos     String?
-  foto         String?
-  quantidade   Int?
-}
-
-model AirConditioner {
-  id           String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria    String  @default("home-appliences")
-  subcategoria String  @default("airConditioners")
-  nome         String? @unique
-  descricao    String?
-  preco        Float?
-  desconto     Int?
-  cor          String?
-  classe       String?
-  tecnologia   String?
-  linha        String?
-  linhaUltra   String?
-  capacidade   Int?
-  ciclo        String?
-  foto         String?
-  quantidade   Int?
-}
-
-model Vacuum {
-  id           String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria    String  @default("home-appliences")
-  subcategoria String  @default("vacuums")
-  nome         String? @unique
-  descricao    String?
-  preco        Float?
-  desconto     Int?
-  cor          String?
-  recursos     String?
-  foto         String?
-  quantidade   Int?
-}
-
-model Dishwashers {
-  id           String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria    String  @default("home-appliences")
-  subcategoria String  @default("dishwashers")
-  nome         String? @unique
-  descricao    String?
-  preco        Float?
-  desconto     Int?
-  cor          String?
-  capacidade   Int?
-  foto         String?
-  quantidade   Int?
-}
-
-model WashMachines {
-  id           String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria    String  @default("home-appliences")
-  subcategoria String  @default("washmashines")
-  nome         String? @unique
-  descricao    String?
-  preco        Float?
-  desconto     Int?
-  cor          String?
-  modelo       String?
-  capacidade   Int?
-  voltagem     String?
-  foto         String?
-  quantidade   Int?
-}
-
-model Cellphone {
-  id              String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria       String  @default("home-appliences")
-  subcategoria    String  @default("cellphones")
-  nome            String? @unique
-  descricao       String?
-  preco           Float?
-  desconto        Int?
-  cor             String?
-  tamanhoTela     String?
-  conectividade   String?
-  armazenamento   String?
-  qualidadeCamera Int?
-  qtdCameras      String?
-  faixaPreco      String?
-  foto            String?
-}
-
-model Notebook {
-  id            String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria     String  @default("home-appliences")
-  subcategoria  String  @default("notebooks")
-  nome          String? @unique
-  descricao     String?
-  preco         Float?
-  desconto      Int?
-  sistema       String?
-  armazenamento String?
-  memoria       String?
-  tamanhoTela   String?
-  recursos      String?
-  foto          String?
-}
-
-model SmartWatch {
-  id            String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria     String  @default("home-appliences")
-  subcategoria  String  @default("smartWatches")
-  nome          String? @unique
-  descricao     String?
-  preco         Float?
-  desconto      Int?
-  tamanho       String?
-  conectividade String?
-  material      String?
-  foto          String?
-}
-
-model Monitor {
-  id              String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria       String  @default("home-appliences")
-  subcategoria    String  @default("monitors")
-  nome            String? @unique
-  descricao       String?
-  preco           Float?
-  desconto        Int?
-  tipo            String?
-  tamanhoTela     String?
-  resolucao       String?
-  taxaAtualizacao String?
-  tempoResposta   String?
-  proporcao       String?
-  recursos        String?
-  foto            String?
-}
-
-model Television {
-  id           String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria    String  @default("home-appliences")
-  subcategoria String  @default("televisions")
-  nome         String? @unique
-  descricao    String?
-  preco        Float?
-  desconto     Int?
-  tipo         String?
-  tamanhoTela  String?
-  resolucao    String?
-  recursos     String?
-  foto         String?
-}
-
-model Keyboard {
-  id           String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria    String  @default("home-appliences")
-  subcategoria String  @default("keyboards")
-  nome         String? @unique
-  descricao    String?
-  preco        Float?
-  desconto     Int?
-  cor          String?
-  tipo         String?
-  layout       String?
-  foto         String?
-}
-
-model Gadget {
-  id           String  @id @default(auto()) @map("_id") @db.ObjectId
-  categoria    String  @default("home-appliences")
-  subcategoria String  @default("gadgets")
-  nome         String? @unique
-  descricao    String?
-  preco        Float?
-  desconto     Int?
-  tipo         String?
-  foto         String?
-}
-
 model Coupon {
   id    String  @id @default(auto()) @map("_id") @db.ObjectId
   name  String?
@@ -223,7 +33,7 @@ model Coupon {
   users String?
 }
 
-model Purchase {
+model Purchase { 
   id              String    @id @default(auto()) @map("_id") @db.ObjectId
   userId          String?
   productId       String?
@@ -270,4 +80,6 @@ model Product {
   tempoResposta   String?
   proporcao       String?
   layout          String?
+  material        String?
+  tamanho         String?
 }

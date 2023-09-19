@@ -10,7 +10,7 @@ const Catalogo = ({ type, method }: catalogo) => {
   const [data, setData] = useState([])
 
   const fetchData = async () => {
-    const searchProduct = await fetch(`/api/products/${type}`)
+    const searchProduct = await fetch(`/api/products/data/${type}`)
     const responseProduct = await searchProduct.json()
     setData(responseProduct)
   }
@@ -28,11 +28,10 @@ const Catalogo = ({ type, method }: catalogo) => {
           handleSearch()
         }
       } else {
-        console.log("B")
         fetchData()
       }
     }
-  }, [type])
+  }, [type, method, data])
 
   return data.length > 0 ? (
     <div className='max-w-[950px] w-full'>
@@ -40,8 +39,8 @@ const Catalogo = ({ type, method }: catalogo) => {
         <div className='w-full flex gap-10'>
           {data.length > 0 ? (
             <>
-              {data.map((product) => (
-                <CellphoneCard content={product} />
+              {data.map((product: any) => (
+                <CellphoneCard content={product} key={product.id} />
               ))}
             </>
           ) : (

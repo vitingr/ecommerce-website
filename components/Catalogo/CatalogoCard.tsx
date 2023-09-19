@@ -19,7 +19,7 @@ const CatalogoCard = ({ content }: { content: any }) => {
         </div>
       </Link>
       <div className='w-full border-r border-gray-300'>
-        <h1 className='font-bold text-[14px]'>{content.nome}</h1>
+        <h1 className='font-bold text-xl'>{content.nome}</h1>
         <h5 className='text-neutral-400 text-xs mb-4'>{content.id}</h5>
         {content.cor ? (
           <>

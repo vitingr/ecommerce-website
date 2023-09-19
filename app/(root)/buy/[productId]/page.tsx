@@ -51,16 +51,16 @@ const page = () => {
       </div>
       <div className='w-full p-[2%] flex justify-center gap-24 bg-[#f7f7f7]'>
 
-        <section className='max-w-[1150px] p-16 bg-white rounded-lg'>
+        <section className='max-w-[1150px] w-full p-16 bg-white rounded-lg'>
           <div>
             <h4 className='flex items-center gap-4 mb-10 text-neutral-500 text-lg cursor-pointer'>Home <IoCaretForward /> Catalogo <IoCaretForward /> {data.nome}</h4>
           </div>
-          <div className='flex'>
+          <div className='flex w-full justify-center'>
             <div className='max-w-[500px] w-full flex flex-col items-center'>
               <img src={data.foto} alt="Product Photo" className='max-w-[500px] w-full cursor-pointer transition-all duration-300 hover:scale-105' />
             </div>
 
-            <div className='flex flex-col'>
+            <div className='flex flex-col w-full'>
               <div className='min-h-[250px]'>
                 <h1 className='font-bold text-3xl'>
                   {data.nome ? (<>{data.nome} </>) : (<></>)}

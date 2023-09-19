@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import Upload from '@components/Config/Upload'
 import { createOptions } from '@constants/filters'
+import { useRouter } from 'next/navigation'
 
 // Imports Components
 import ToastMessage from '@components/Config/ToastMessage'
@@ -13,6 +14,7 @@ import FormField from '@components/FormField'
 const CreateProduct = ({ type }: { type: string }) => {
 
   const [categoria, setCategoria] = useState("")
+  const router = useRouter()
 
   const [form, setForm] = useState<FormState>({
     categoria: categoria,
@@ -89,7 +91,7 @@ const CreateProduct = ({ type }: { type: string }) => {
       if (imageUpload.ok) {
         photoCloudinary = await imageUpload.json()
         try {
-          const response = await fetch(`/api/products/${type}/new`, {
+          const response = await fetch(`/api/products/new`, {
             method: "POST",
             body: JSON.stringify({
               form: form,
@@ -98,6 +100,7 @@ const CreateProduct = ({ type }: { type: string }) => {
           })
           if (response.ok) {
             toast.success("Produto Criado com Sucesso!")
+            router.push("/")
           } else {
             toast.error("ERRO! Não foi possível criar o produto")
           }

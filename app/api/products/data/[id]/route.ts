@@ -6,12 +6,11 @@ export const GET = async (request: Request, { params }: getInterface) => {
   try {
 
     let item
-    const query = params.id.split("-")
+    const query = params.id
 
-    item = await prisma.product.findUnique({
+    item = await prisma.product.findMany({
       where: {
-        id: query[1],
-        subcategoria: query[0]
+        subcategoria: query
       }
     })
 
