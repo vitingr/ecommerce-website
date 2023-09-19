@@ -246,7 +246,7 @@ export const createMaquinaLavar = [
   {
     option: "cor",
     name: "Cores",
-    type: "select",
+    type: "checkbox",
     options: [
       { title: "Preto" },
       { title: "Branco" },
@@ -298,7 +298,7 @@ export const createLavaLoucas = [
   {
     option: "cor",
     name: "Cores",
-    type: "select",
+    type: "checkbox",
     options: [
       { title: "Preto" },
       { title: "Branco" },
@@ -335,7 +335,7 @@ export const createAspirador = [
   {
     option: "cor",
     name: "Cores",
-    type: "select",
+    type: "checkbox",
     options: [
       { title: "Preto" },
       { title: "Branco" },
@@ -824,7 +824,7 @@ export const createTeclado = [
   {
     option: "cor",
     name: "Cor",
-    type: "select",
+    type: "checkbox",
     options: [
       { title: "Preto" },
       { title: "Branco" },
