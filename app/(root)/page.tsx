@@ -22,7 +22,7 @@ export default function Home() {
   }
 
   const handleSearch = async () => {
-		const query = searchText.replace(" ", "-")
+    const query = searchText.replace(" ", "-")
     router.push(`/catalogo/search/${query}`)
   }
 
@@ -48,21 +48,11 @@ export default function Home() {
         <h1 className="text-center mt-20 text-4xl font-bold">Destaques</h1>
         <div className="flex justify-center mt-8 gap-8 nav-main xs:gap-4">
           <h4 className="cursor-pointer underline underline-offset-4 text-lg xs:text-xs">Novidades</h4>
-          <Link href={"/catalogo/cellphone"}>
-            <h4 className="cursor-pointer text-lg xs:text-xs">Mobile</h4>
-          </Link>
-          <Link href={"/catalogo/television"}>
-            <h4 className="cursor-pointer text-lg xs:text-xs">TVs</h4>
-          </Link>
-          <Link href="/catalogo/home-appliences">
-            <h4 className="cursor-pointer text-lg xs:text-xs">Eletrodomésticos</h4>
-          </Link>
-          <Link href={"/catalogo/notebook"}>
-            <h4 className="cursor-pointer text-lg xs:text-xs">Informática</h4>
-          </Link>
-          <Link href={"/catalogo/gadgets"}>
-            <h4 className="cursor-pointer text-lg xs:text-xs">Acessórios</h4>
-          </Link>
+          <Link href={"/catalogo/cellphone"}><h4 className="cursor-pointer text-lg xs:text-xs">Mobile</h4></Link>
+          <Link href={"/catalogo/television"}><h4 className="cursor-pointer text-lg xs:text-xs">TVs</h4></Link>
+          <Link href="/catalogo/home-appliences"><h4 className="cursor-pointer text-lg xs:text-xs">Eletrodomésticos</h4></Link>
+          <Link href={"/catalogo/notebook"}><h4 className="cursor-pointer text-lg xs:text-xs">Informática</h4></Link>
+          <Link href={"/catalogo/gadgets"}><h4 className="cursor-pointer text-lg xs:text-xs">Acessórios</h4></Link>
         </div>
 
         <div className="flex justify-center mt-8 gap-4 w-full destaques-container xs:p-[3%]">
@@ -84,9 +74,7 @@ export default function Home() {
           </div>
         </div>
 
-        <Link href="/catalogo">
-          <h4 className="big-link">Ver mais...</h4>
-        </Link>
+        <Link href="/catalogo"><h4 className="big-link">Ver mais...</h4></Link>
 
         <h1 className="mt-24 mb-20 w-full text-center font-[500] text-5xl cursor-default">Fornecendo <span className="font-[500] text-transparent text-5xl bg-clip-text bg-gradient-to-r from-[#6C47FF] to-[#5BC5EF]">Estilo e Design</span> para mais de<span className="font-[500] text-transparent text-5xl bg-clip-text bg-gradient-to-r from-[#6C47FF] to-[#5BC5EF]"> 10,000+</span> pessoas</h1>
 
@@ -107,9 +95,65 @@ export default function Home() {
         <div className="flex flex-col justify-center items-center mt-[390px]">
           <h1 className="text-white text-4xl font-bold">Neo QLED 8K</h1>
           <p className="text-white mt-2">Ambiente climatizado com design elegante e moderno</p>
-          <button className="bg-white p-2 pl-6 pr-6 text-sm rounded-3xl mt-2">
-            Compre Agora
-          </button>
+          <button className="bg-white p-2 pl-6 pr-6 text-sm rounded-3xl mt-2">Compre Agora</button>
+        </div>
+      </section>
+
+      <section className="mt-[8em]">
+        <h1 className="text-4xl text-center font-bold mb-20">Produtos Recomendados</h1>
+        <div className="flex gap-6 justify-center">
+          <div className="h-[500px] w-[300px] bg-[#f4f4f4] rounded-lg flex flex-col items-center p-6">
+            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/rs52b3000m9-bz/gallery/br-side-by-side-modern-and-sleek-design-rs52b3000m9-bz-thumb-536903473?$216_216_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
+            <h2 className="text-lg font-bold text-center mt-4">Geladeira Side by Side RS52 com All Around Cooling</h2>
+            <h5 className="font-bold text-sm mt-4">Cor: <span className="font-normal text-sm">Branco</span></h5>
+            <div className="flex justify-center items-center">
+              <div className='w-5 h-5 rounded-full mt-2 bg-white border border-zinc-500 cursor-pointer' />
+            </div>
+            <div>
+              <h1 className="text-center mt-8 text-xl font-bold">R$5.999,99 à vista</h1>
+              <h2 className="text-center text-sm">ou 12x de R$499,91 sem juros</h2>
+            </div>
+            <div className="mt-8 p-1 w-full bg-[#262f40] text-white rounded-full text-center cursor-pointer">Comprar Agora</div>
+          </div>
+          <div className="h-[500px] w-[300px] bg-[#f4f4f4] rounded-lg flex flex-col items-center p-6">
+            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/rl4353rbab1-az/gallery/br-bottom-freezer-rl4353rbasl-rl4353rbab1-az-thumb-537712364?$216_216_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
+            <h2 className="text-lg font-bold text-center mt-4">Geladeira Duplex Inverse BAROSA RL4353 Smart</h2>
+            <h5 className="font-bold text-sm mt-4">Cor: <span className="font-normal text-sm">Preto</span></h5>
+            <div className="flex justify-center items-center">
+              <div className='w-5 h-5 rounded-full mt-2 bg-[#262f40] border border-zinc-500 cursor-pointer' />
+            </div>
+            <div>
+              <h1 className="text-center mt-8 text-xl font-bold">R$5.999,99 à vista</h1>
+              <h2 className="text-center text-sm">ou 12x de R$499,91 sem juros</h2>
+            </div>
+            <div className="mt-8 p-1 w-full bg-[#262f40] text-white rounded-full text-center cursor-pointer">Comprar Agora</div>
+          </div>
+          <div className="h-[500px] w-[300px] bg-[#f4f4f4] rounded-lg flex flex-col items-center p-6">
+            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/rs60t5200b1-bz/gallery/br-ref-sbs-rs5300-rs60t5200b1-bz-thumb-535093766?$216_216_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
+            <h2 className="text-lg font-bold text-center mt-4">Geladeira Side by Side RS60 602L Black Inox Look</h2>
+            <h5 className="font-bold text-sm mt-4">Cor: <span className="font-normal text-sm">Preto</span></h5>
+            <div className="flex justify-center items-center">
+              <div className='w-5 h-5 rounded-full mt-2 bg-[#262f40] border border-zinc-500 cursor-pointer' />
+            </div>
+            <div>
+              <h1 className="text-center mt-8 text-xl font-bold">R$5.999,99 à vista</h1>
+              <h2 className="text-center text-sm">ou 12x de R$499,91 sem juros</h2>
+            </div>
+            <div className="mt-8 p-1 w-full bg-[#262f40] text-white rounded-full text-center cursor-pointer">Comprar Agora</div>
+          </div>
+          <div className="h-[500px] w-[300px] bg-[#f4f4f4] rounded-lg flex flex-col items-center p-6">
+            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/sm-m546bdbdzto/gallery/br-galaxy-m54-5g-sm-m546-sm-m546bdbdzto-thumb-536057154?$216_216_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
+            <h2 className="text-lg font-bold text-center mt-4">Samsung Galaxy M54 New 5G Plus</h2>
+            <h5 className="font-bold text-sm mt-4">Cor: <span className="font-normal text-sm">Preto</span></h5>
+            <div className="flex justify-center items-center">
+              <div className='w-5 h-5 rounded-full mt-2 bg-[#262f40] border border-zinc-500 cursor-pointer' />
+            </div>
+            <div>
+              <h1 className="text-center mt-8 text-xl font-bold">R$5.999,99 à vista</h1>
+              <h2 className="text-center text-sm">ou 12x de R$499,91 sem juros</h2>
+            </div>
+            <div className="mt-8 p-1 w-full bg-[#262f40] text-white rounded-full text-center cursor-pointer">Comprar Agora</div>
+          </div>
         </div>
       </section>
 
