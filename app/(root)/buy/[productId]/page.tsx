@@ -153,6 +153,9 @@ const page = () => {
               </div>
             </div>
           </div>
+          <div className='text-xl mt-[150px] cursor-pointer text-neutral-500 text-center hover:text-[#262f40] transition-all duration-200'>
+            Ver mais Informações do Produto
+          </div>
         </section>
 
         <section>
