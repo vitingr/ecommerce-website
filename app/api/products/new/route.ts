@@ -46,7 +46,8 @@ export const POST = async (request: Request) => {
         tempoResposta: form.tempoResposta,
         proporcao: form.proporcao,
         tipo: form.tipo,
-        layout: form.layout
+        layout: form.layout,
+        quantidade: 1
       }
     })
 

@@ -5,11 +5,48 @@ import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { Sidebar } from '@components'
 import Catalogo from '@components/Catalogo/Catalogo'
+import { FormState } from '@types'
 
 const page = () => {
 
   const pathname = usePathname().split("/")
   const query = pathname[2]
+
+  const [data, setData] = useState([])
+
+  const [params,  setParams] = useState<FormState>({
+    cor: "",
+    modelo: "",
+    capacidade: 0,
+    voltagem: "",
+    numPortas: "",
+    display: "",  
+    puxador: "",
+    recursos: "",
+    photo: "",
+    classe: "",
+    tecnologia: "",
+    linha: "",
+    linhaUltra: "",
+    ciclo: "",
+    tamanhoTela: "",
+    conectividade: "",
+    armazenamento: "",
+    qualidadeCamera: 0,
+    qtdCameras: "",
+    faixaPreco: "",
+    memoria: "",
+    sistema: "",
+    material: "",
+    tamanho: "",
+    resolucao: "",
+    taxaAtualizacao: "",
+    tempoResposta: "",
+    proporcao: "",
+    tipo: "",
+    layout: "",
+    quantidade: 1
+  })
 
   return query ? (
     <main className='flex flex-col justify-center items-center w-full min-h-[72vh] bg-[#f7f7f7] p-[2%]'>
@@ -19,8 +56,8 @@ const page = () => {
       </div>
       {query ? (
         <div className='w-full max-w-[1350px] flex justify-center gap-14'>
-          <Sidebar type={query} />
-          <Catalogo type={query} />
+          <Sidebar type={query} params={params} setParams={setParams} data={data} setData={setData}/>
+          <Catalogo type={query} params={params} data={data} setData={setData} />
         </div>
       ) : (
         <></>

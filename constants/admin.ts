@@ -771,7 +771,7 @@ export const createTV = [
     ]
   },
   {
-    option: "tipoResolucao",
+    option: "resolucao",
     name: "Tipo de Resolução",
     type: "select",
     options: [

@@ -52,7 +52,8 @@ const CreateProduct = ({ type }: { type: string }) => {
     tempoResposta: "",
     proporcao: "",
     tipo: "",
-    layout: ""
+    layout: "",
+    quantidade: 1
   })
 
   const checkCategoria = async () => {

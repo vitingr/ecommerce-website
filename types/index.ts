@@ -10,11 +10,18 @@ export interface destaqueSm {
 
 export interface sidebar {
   type: String;
+  params?: any;
+  setParams?: any;
+  setData: any;
+  data: any
 }
 
 export interface catalogo {
   type: String;
   method?: String;
+  params: any;
+  setData: any;
+  data: any
 }
 
 export interface optionsCreateProduct {
@@ -41,17 +48,18 @@ export interface destaquesInfoCellphone {
 }
 
 export interface FormState {
-  categoria: string;
-  subcategoria: string;
-  nome: string;
-  descricao: string;
-  preco: number;
-  desconto: number;
+  categoria?: string;
+  subcategoria?: string;
+  nome?: string;
+  descricao?: string;
+  preco?: number;
+  desconto?: number;
   cor: string;
   modelo: string;
   capacidade: number;
   voltagem: string;
-  numeroPortas: string;
+  numeroPortas?: string;
+  numPortas?: string;
   display: string;
   puxador: string;
   recursos: string;
@@ -77,4 +85,5 @@ export interface FormState {
   proporcao: string;
   tipo: string;
   layout: string;
+  quantidade: number;
 }

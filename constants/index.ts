@@ -37,6 +37,7 @@ export const geladeiraFilter = [
   },
   {
     title: "Modelo",
+    identifier: "modelo",
     options: [
       { title: "French Door" },
       { title: "Side by Side" },
@@ -47,6 +48,7 @@ export const geladeiraFilter = [
   },
   {
     title: "Capacidade",
+    identifier: "capacidade",
     options: [
       { title: "Baixa - até 400L" },
       { title: "Média - 400 a 500L" },
@@ -56,15 +58,17 @@ export const geladeiraFilter = [
   },
   {
     title: "Cor",
+    identifier: "cor",
     options: [
       { title: "Inbox / Prata" },
-      { title: "Branca" },
+      { title: "Branco" },
       { title: "Preto" },
       { title: "Cinza Acetinado" },
     ]
   },
   {
     title: "Voltagem",
+    identifier: "voltagem",
     options: [
       { title: "110 V" },
       { title: "220 V" },
@@ -74,6 +78,7 @@ export const geladeiraFilter = [
   },
   {
     title: "Número de Portas",
+    identifier: "numeroPortas",
     options: [
       { title: "1" },
       { title: "2" },
@@ -83,6 +88,7 @@ export const geladeiraFilter = [
   },
   {
     title: "Display",
+    identifier: "display",
     options: [
       { title: "Externo" },
       { title: "Interno" },
@@ -90,6 +96,7 @@ export const geladeiraFilter = [
   },
   {
     title: "Puxador",
+    identifier: "puxador",
     options: [
       { title: "Recessivo" },
       { title: "Embutido" },
@@ -98,6 +105,7 @@ export const geladeiraFilter = [
   },
   {
     title: "Recursos",
+    identifier: "recursos",
     options: [
       { title: "Água e Gelo na Porta" },
       { title: "Rack de Vinhos" },
@@ -116,6 +124,7 @@ export const arCondicionadoFilter = [
   },
   {
     title: "Classe",
+    identifier: "classe",
     options: [
       { title: "Wall Mount" },
       { title: "Floor Standing" },
@@ -124,6 +133,7 @@ export const arCondicionadoFilter = [
   },
   {
     title: "Categoria",
+    identifier: "categoria",
     options: [
       { title: "Multi Split" },
       { title: "Split" },
@@ -132,6 +142,7 @@ export const arCondicionadoFilter = [
   },
   {
     title: "Tecnologia WindFree (sem vento)",
+    identifier: "tecnologia",
     options: [
       { title: "Sim" },
       { title: "Não" },
@@ -139,6 +150,7 @@ export const arCondicionadoFilter = [
   },
   {
     title: "Linha WindFree",
+    identifier: "linha",
     options: [
       { title: "Design" },
       { title: "Connect" },
@@ -148,12 +160,14 @@ export const arCondicionadoFilter = [
   },
   {
     title: "Linha Ultra",
+    identifier: "linhaUltra",
     options: [
       { title: "Digital Inverter Ultra" },
     ]
   },
   {
     title: "Capacidade",
+    identifier: "capacidade",
     options: [
       { title: "5.000 a 10.000" },
       { title: "7.000 a 10.000" },
@@ -165,6 +179,7 @@ export const arCondicionadoFilter = [
   },
   {
     title: "Ciclo",
+    identifier: "ciclo",
     options: [
       { title: "Frio" },
       { title: "Quente e Frio" },
@@ -181,6 +196,7 @@ export const maquinaLavarFilter = [
   },
   {
     title: "Modelo",
+    identifier: "modelo",
     options: [
       { title: "Máquina de Lavar" },
       { title: "Lava e Seca" },
@@ -189,6 +205,7 @@ export const maquinaLavarFilter = [
   },
   {
     title: "Capacidade",
+    identifier: "capacidade",
     options: [
       { title: "Até 10kg" },
       { title: "de 10.1 até 15kg" },
@@ -197,14 +214,16 @@ export const maquinaLavarFilter = [
   },
   {
     title: "Cores",
+    identifier: "cor",
     options: [
-      { title: "Black" },
-      { title: "Branca" },
+      { title: "Preto" },
+      { title: "Branco" },
       { title: "Inox Look" },
     ]
   },
   {
     title: "Voltagem",
+    identifier: "voltagem",
     options: [
       { title: "127 V" },
       { title: "220 V" },
@@ -221,6 +240,7 @@ export const lavaLoucasFilter = [
   },
   {
     title: "Recursos",
+    identifier: "recursos",
     options: [
       { title: "10 serviços" },
       { title: "14 serviços" },
@@ -237,6 +257,7 @@ export const aspiradorFilter = [
   },
   {
     title: "Recursos",
+    identifier: "recursos",
     options: [
       { title: "Robô Aspirador" },
       { title: "Vertical" },
@@ -253,6 +274,7 @@ export const cellphoneFilter = [
   },
   {
     title: "Tamanho da Tela",
+    identifier: "tamanhoTela",
     options: [
       {title: "6.0' - 6.2'"},
       {title: "6.3' - 6.5'"},
@@ -262,13 +284,15 @@ export const cellphoneFilter = [
   },
   {
     title: "Conectivade",
+    identifier: "conectividade",
     options: [
       {title: "4G"},
       {title: "5G"},
     ]
   },
   {
-    title: "Memória",
+    title: "Armazenamento",
+    identifier: "armazenamento",
     options: [
       {title: "32GB"},
       {title: "64GB"},
@@ -280,6 +304,7 @@ export const cellphoneFilter = [
   },
   {
     title: "Qualidade Camêra Traseira",
+    identifier: "qualidadeCamera",
     options: [
       {title: "4.9MP"},
       {title: "9 - 12.9MP"},
@@ -291,6 +316,7 @@ export const cellphoneFilter = [
   },
   {
     title: "Quantidade de Câmeras",
+    identifier: "qtdCameras",
     options: [
       {title: "Duas Câmeras"},
       {title: "Três Câmeras"},
@@ -299,6 +325,7 @@ export const cellphoneFilter = [
   },
   {
     title: "Faixa de Preço",
+    identifier: "faixaPreco",
     options: [
       {title: "Acessível"},
       {title: "Intermediário"},
@@ -316,6 +343,7 @@ export const notebookFilter = [
   },
   {
     title: "Sistema Operacional",
+    identifier: "sistema",
     options: [
       { title: "Windows 11" },
       { title: "Windows 10" },
@@ -323,6 +351,7 @@ export const notebookFilter = [
     ]
   },  {
     title: "Armazenamento",
+    identifier: "armazenamento",
     options: [
       { title: "256 GB" },
       { title: "512 GB" },
@@ -332,6 +361,7 @@ export const notebookFilter = [
   },
   {
     title: "Memória RAM",
+    identifier: "memoria",
     options: [
       { title: "4 GB" },
       { title: "8 GB" },
@@ -341,6 +371,7 @@ export const notebookFilter = [
   },
   {
     title: "Tamanho da tela",
+    identifier: "tamanhoTela",
     options: [
       { title: "11.0'- 12.9'" },
       { title: "13.0' - 14.9'" },
@@ -349,6 +380,7 @@ export const notebookFilter = [
   },
   {
     title: "Recursos",
+    identifier: "recursos",
     options: [
       { title: "Tela AMOLED" },
     ]
@@ -364,6 +396,7 @@ export const smartWatchFilter = [
   },
   {
     title: "Tamanhos",
+    identifier: "tamanho",
     options: [
       { title: "40mm" },
       { title: "42mm" },
@@ -374,6 +407,7 @@ export const smartWatchFilter = [
   },
   {
     title: "Conectividade",
+    identifier: "conectividade",
     options: [
       { title: "Bluetooth" },
       { title: "Bluetooth + 4G" },
@@ -381,6 +415,7 @@ export const smartWatchFilter = [
   },
   {
     title: "Material",
+    identifier: "material",
     options: [
       { title: "Alumínio" },
       { title: "Aço Inox" },
@@ -398,6 +433,7 @@ export const monitorFilter = [
   },
   {
     title: "Tipo",
+    identifier: "tipo",
     options: [
       { title: "SMART Monitor" },
       { title: "Odyssey" },
@@ -409,6 +445,7 @@ export const monitorFilter = [
   },
   {
     title: "Tamanho da Tela",
+    identifier: "tamanhoTela",
     options: [
       { title: "22'" },
       { title: "24-25'" },
@@ -419,6 +456,7 @@ export const monitorFilter = [
   },
   {
     title: "Resolução",
+    identifier: "resolucao",
     options: [
       { title: "FHD" },
       { title: "DFHD" },
@@ -430,6 +468,7 @@ export const monitorFilter = [
   },
   {
     title: "Taxa de Atualização",
+    identifier: "taxaAtualizacao",
     options: [
       { title: "60Hz" },
       { title: "75Hz" },
@@ -443,6 +482,7 @@ export const monitorFilter = [
   },
   {
     title: "Tempo de Resposta",
+    identifier: "tempoResposta",
     options: [
       { title: "0.03ms" },
       { title: "0.1ms" },
@@ -454,6 +494,7 @@ export const monitorFilter = [
   },
   {
     title: "Proporção de Tela",
+    identifier: "proporcao",
     options: [
       { title: "16:9" },
       { title: "21:9" },
@@ -462,6 +503,7 @@ export const monitorFilter = [
   },
   {
     title: "Recursos",
+    identifier: "recursos",
     options: [
       { title: "Alto Falante" },
       { title: "HAS" },
@@ -483,6 +525,7 @@ export const tvFilter = [
   },
   {
     title: "Categoria",
+    identifier: "tipo",
     options: [
       { title: "Neo QLED" },
       { title: "QLED" },
@@ -493,6 +536,7 @@ export const tvFilter = [
   },
   {
     title: "Tamanho da Tela",
+    identifier: "tamanhoTela",
     options: [
       { title: "120 polegadas" },
       { title: "110 polegadas" },
@@ -510,6 +554,7 @@ export const tvFilter = [
   },
   {
     title: "Tipo de Resolução",
+    identifier: "resolucao",
     options: [
       { title: "8K" },
       { title: "4K" },
@@ -519,6 +564,7 @@ export const tvFilter = [
   },
   {
     title: "Recursos",
+    identifier: "recursos",
     options: [
       { title: "Pontos Quânticos" },
       { title: "Modo Game (Ultra-Wide, Menu de Jogos)" },
@@ -539,6 +585,7 @@ export const tecladoFilter = [
   },
   {
     title: "Cor",
+    identifier: "cor",
     options: [
       { title: "Preto" },
       { title: "Branco" },
@@ -547,6 +594,7 @@ export const tecladoFilter = [
   },
   {
     title: "Tipo",
+    identifier: "tipo",
     options: [
       { title: "Normal" },
       { title: "RGB" },
@@ -554,6 +602,7 @@ export const tecladoFilter = [
   },
   {
     title: "Layout",
+    identifier: "layout",
     options: [
       { title: "Brasileiro" },
       { title: "Internacional" },
@@ -570,6 +619,7 @@ export const acessorioFilter = [
   },
   {
     title: "Tipo",
+    identifier: "tipo",
     options: [
       { title: "Capas para Smartphones" },
       { title: "Adaptadores e Carregadores" },

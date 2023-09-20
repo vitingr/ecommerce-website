@@ -5,9 +5,7 @@ import React, { useEffect, useState } from 'react'
 import CatalogoCard from './CatalogoCard'
 import CellphoneCard from './CellphoneCard'
 
-const Catalogo = ({ type, method }: catalogo) => {
-
-  const [data, setData] = useState([])
+const Catalogo = ({ type, method, params, data, setData }: catalogo) => {
 
   const fetchData = async () => {
     const searchProduct = await fetch(`/api/products/data/${type}`)
@@ -53,8 +51,8 @@ const Catalogo = ({ type, method }: catalogo) => {
         <div className='w-full'>
           {data.length > 0 ? (
             <>
-              {data.map((product) => (
-                <CatalogoCard content={product} />
+              {data.map((product: any) => (
+                <CatalogoCard content={product} key={product.id} />
               ))}
             </>
           ) : (
