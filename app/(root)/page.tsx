@@ -16,6 +16,12 @@ export default function Home() {
   const router = useRouter()
 
   const [actualSearchItem, setActualSeachItem] = useState("https://www.home-designing.com/wp-content/uploads/2018/01/orange-cushions-grey-curtains-dark-living-room.jpg")
+  const [actualLink, setActualLink] = useState("/catalogo/television")
+
+  const changeItem = async (foto: string, link: string) => {
+    setActualSeachItem(foto)
+    setActualLink(link)
+  }
 
   const handleClick = async () => {
 
@@ -84,18 +90,20 @@ export default function Home() {
         <div className="text-center mt-12 text-3xl text-white font-bold">
           <h1 className="text-white">Eletrodomésticos</h1>
           <div className="flex justify-center mt-4 gap-10 nav-main-white overflow-hidden xs:gap-6">
-            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem("https://www.home-designing.com/wp-content/uploads/2018/01/orange-cushions-grey-curtains-dark-living-room.jpg")}>Neo QLED 8K</h4>
-            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem("https://images.samsung.com/is/image/samsung/assets/br/home/banners_home_windfree_blackedition_1440x810.jpg?$1440_810_JPG$")}>WindFree Black Edition</h4>
-            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem("https://images.samsung.com/is/image/samsung/assets/br/homepage/hp/SMG_JetBotAI_Banner_Desktop_20220429.jpg?$1440_810_JPG$")}>Jet Bot AI+</h4>
-            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem("https://images.samsung.com/is/image/samsung/assets/br/home/GBM-QDrive-PC.jpg?$1440_810_JPG$")}>Quickdrive</h4>
-            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => setActualSeachItem("https://image.lexica.art/full_jpg/f7f7913a-d1c2-495d-811a-8debc5ce40bc")}>The Frame</h4>
+            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => changeItem("https://www.home-designing.com/wp-content/uploads/2018/01/orange-cushions-grey-curtains-dark-living-room.jpg", "/catalogo/television")}>Neo QLED 8K</h4>
+            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => changeItem("https://images.samsung.com/is/image/samsung/assets/br/home/banners_home_windfree_blackedition_1440x810.jpg?$1440_810_JPG$", "/catalogo/air-conditioner")}>WindFree Black Edition</h4>
+            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => changeItem("https://images.samsung.com/is/image/samsung/assets/br/homepage/hp/SMG_JetBotAI_Banner_Desktop_20220429.jpg?$1440_810_JPG$", "/catalogo/vacuum")}>Jet Bot AI+</h4>
+            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => changeItem("https://images.samsung.com/is/image/samsung/assets/br/home/GBM-QDrive-PC.jpg?$1440_810_JPG$", "/catalogo/washmachine")}>Quickdrive</h4>
+            <h4 className="cursor-pointer text-lg xs:text-xs text-white" onClick={() => changeItem("https://image.lexica.art/full_jpg/f7f7913a-d1c2-495d-811a-8debc5ce40bc", "/catalogo/dishwasher")}>The Frame</h4>
           </div>
         </div>
 
         <div className="flex flex-col justify-center items-center mt-[390px]">
-          <h1 className="text-white text-4xl font-bold">Neo QLED 8K</h1>
-          <p className="text-white mt-2">Ambiente climatizado com design elegante e moderno</p>
-          <button className="bg-white p-2 pl-6 pr-6 text-sm rounded-3xl mt-2">Compre Agora</button>
+          <h1 className="text-white text-4xl font-bold">Nossos Produtos</h1>
+          <p className="text-white mt-2">Ambiente de qualidade com design elegante e moderno</p>
+          <Link href={actualLink}>
+            <button className="bg-white p-2 pl-6 pr-6 text-sm rounded-3xl mt-2">Compre Agora</button>
+          </Link>
         </div>
       </section>
 
@@ -103,54 +111,54 @@ export default function Home() {
         <h1 className="text-4xl text-center font-bold mb-20">Produtos Recomendados</h1>
         <div className="flex gap-6 justify-center">
           <div className="h-[500px] w-[300px] bg-[#f4f4f4] rounded-lg flex flex-col items-center p-6">
-            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/rs52b3000m9-bz/gallery/br-side-by-side-modern-and-sleek-design-rs52b3000m9-bz-thumb-536903473?$216_216_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
-            <h2 className="text-lg font-bold text-center mt-4">Geladeira Side by Side RS52 com All Around Cooling</h2>
+            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/rf24bb66008aaz/gallery/br-counter-depth-3-door-french-door-beverage-center-rf24bb66008aaz-537293826?$1300_1038_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
+            <h2 className="text-lg font-bold text-center mt-4">Geladeira Bespoke French Door Porta Automática 550L</h2>
             <h5 className="font-bold text-sm mt-4">Cor: <span className="font-normal text-sm">Branco</span></h5>
             <div className="flex justify-center items-center">
               <div className='w-5 h-5 rounded-full mt-2 bg-white border border-zinc-500 cursor-pointer' />
             </div>
             <div>
-              <h1 className="text-center mt-8 text-xl font-bold">R$5.999,99 à vista</h1>
-              <h2 className="text-center text-sm">ou 12x de R$499,91 sem juros</h2>
+              <h1 className="text-center mt-8 text-xl font-bold">R$23.749,05 à vista</h1>
+              <h2 className="text-center text-sm">ou 12x de R$2.083,25 sem juros</h2>
             </div>
             <div className="mt-8 p-1 w-full bg-[#262f40] text-white rounded-full text-center cursor-pointer">Comprar Agora</div>
           </div>
           <div className="h-[500px] w-[300px] bg-[#f4f4f4] rounded-lg flex flex-col items-center p-6">
-            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/rl4353rbab1-az/gallery/br-bottom-freezer-rl4353rbasl-rl4353rbab1-az-thumb-537712364?$216_216_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
-            <h2 className="text-lg font-bold text-center mt-4">Geladeira Duplex Inverse BAROSA RL4353 Smart</h2>
+            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/rs60cb760a7naz/gallery/br-counter-depth-side-by-side-auto-open-door-462251-rs60cb760a7naz-537587530?$1300_1038_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
+            <h2 className="text-lg font-bold text-center mt-4">Geladeira Bespoke Side by Side Porta Automática 590L</h2>
             <h5 className="font-bold text-sm mt-4">Cor: <span className="font-normal text-sm">Preto</span></h5>
             <div className="flex justify-center items-center">
               <div className='w-5 h-5 rounded-full mt-2 bg-[#262f40] border border-zinc-500 cursor-pointer' />
             </div>
             <div>
-              <h1 className="text-center mt-8 text-xl font-bold">R$5.999,99 à vista</h1>
-              <h2 className="text-center text-sm">ou 12x de R$499,91 sem juros</h2>
+              <h1 className="text-center mt-8 text-xl font-bold">R$19.999,00 à vista</h1>
+              <h2 className="text-center text-sm">ou 12x de R$1.666,58 sem juros</h2>
             </div>
             <div className="mt-8 p-1 w-full bg-[#262f40] text-white rounded-full text-center cursor-pointer">Comprar Agora</div>
           </div>
           <div className="h-[500px] w-[300px] bg-[#f4f4f4] rounded-lg flex flex-col items-center p-6">
-            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/rs60t5200b1-bz/gallery/br-ref-sbs-rs5300-rs60t5200b1-bz-thumb-535093766?$216_216_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
-            <h2 className="text-lg font-bold text-center mt-4">Geladeira Side by Side RS60 602L Black Inox Look</h2>
+            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/rs52b3000m9-bz/gallery/br-side-by-side-modern-and-sleek-design-rs52b3000m9-bz-536903472?$1300_1038_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
+            <h2 className="text-lg font-bold text-center mt-4">Geladeira Side By Side RS52 All Around Coolin 490L</h2>
             <h5 className="font-bold text-sm mt-4">Cor: <span className="font-normal text-sm">Preto</span></h5>
             <div className="flex justify-center items-center">
               <div className='w-5 h-5 rounded-full mt-2 bg-[#262f40] border border-zinc-500 cursor-pointer' />
             </div>
             <div>
-              <h1 className="text-center mt-8 text-xl font-bold">R$5.999,99 à vista</h1>
-              <h2 className="text-center text-sm">ou 12x de R$499,91 sem juros</h2>
+              <h1 className="text-center mt-8 text-xl font-bold">R$5.499,00 à vista</h1>
+              <h2 className="text-center text-sm">ou 12x de R$458,25 sem juros</h2>
             </div>
             <div className="mt-8 p-1 w-full bg-[#262f40] text-white rounded-full text-center cursor-pointer">Comprar Agora</div>
           </div>
           <div className="h-[500px] w-[300px] bg-[#f4f4f4] rounded-lg flex flex-col items-center p-6">
-            <img src="https://images.samsung.com/is/image/samsung/p6pim/br/sm-m546bdbdzto/gallery/br-galaxy-m54-5g-sm-m546-sm-m546bdbdzto-thumb-536057154?$216_216_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
-            <h2 className="text-lg font-bold text-center mt-4">Samsung Galaxy M54 New 5G Plus</h2>
+            <img src="https://images.samsung.com/is/image/samsung/p6pim/in/ww70t502dax-tl/gallery/in-front-loading-washer-ww10t534daws1-374547-ww70t502dax-tl-383436047?$650_519_PNG$" className="max-h-[200px]" alt="Image Recomended Products" />
+            <h2 className="text-lg font-bold text-center mt-4">Máquina de Lavar M54 Ultra Panasonic</h2>
             <h5 className="font-bold text-sm mt-4">Cor: <span className="font-normal text-sm">Preto</span></h5>
             <div className="flex justify-center items-center">
               <div className='w-5 h-5 rounded-full mt-2 bg-[#262f40] border border-zinc-500 cursor-pointer' />
             </div>
             <div>
-              <h1 className="text-center mt-8 text-xl font-bold">R$5.999,99 à vista</h1>
-              <h2 className="text-center text-sm">ou 12x de R$499,91 sem juros</h2>
+              <h1 className="text-center mt-8 text-xl font-bold">R$2.800,00 à vista</h1>
+              <h2 className="text-center text-sm">ou 12x de R$233,34 sem juros</h2>
             </div>
             <div className="mt-8 p-1 w-full bg-[#262f40] text-white rounded-full text-center cursor-pointer">Comprar Agora</div>
           </div>

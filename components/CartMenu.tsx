@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 
-const CartMenu = ({ id }: { id: string }) => {
+const CartMenu = ({ id }: { id: any }) => {
 
   const [purchases, setPurchases] = useState<Array<string | number | any>>([])
   const [productsData, setProductsData] = useState<Array<string | number>>([])
@@ -11,7 +11,7 @@ const CartMenu = ({ id }: { id: string }) => {
     const search = await fetch("/api/user/purchases")
     const response = await search.json()
     if (response) {
-      await setPurchases(response)
+      setPurchases(response)
     }
 
     if (purchases.length > 0) {

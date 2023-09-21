@@ -60,7 +60,7 @@ const page = () => {
               <img src={data.foto} alt="Product Photo" className='max-w-[500px] w-full cursor-pointer transition-all duration-300 hover:scale-105' />
             </div>
 
-            <div className='flex flex-col w-full'>
+            <div className='flex flex-col w-full max-w-[650px]'>
               <div className='min-h-[250px]'>
                 <h1 className='font-bold text-3xl'>
                   {data.nome ? (<>{data.nome} </>) : (<></>)}
@@ -91,49 +91,49 @@ const page = () => {
                     {data.cor.includes("Inbox / Prata") ? (
                       <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
                         <div className='w-4 h-4 bg-slate-400 rounded-full' />
-                        <p className='mt-2 text-sm'>Inbox / Prata</p>
+                        <p className='mt-2 text-sm text-center'>Inbox / Prata</p>
                       </div>
                     ) : (<></>)}
                     {data.cor.includes("Branco") ? (
                       <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
                         <div className='w-4 h-4 bg-white rounded-full border border-gray-800' />
-                        <p className='mt-2 text-sm'>Branco</p>
+                        <p className='mt-2 text-sm text-center'>Branco</p>
                       </div>
                     ) : (<></>)}
                     {data.cor.includes("Preto") ? (
                       <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
                         <div className='w-4 h-4 bg-[#262f40] rounded-full' />
-                        <p className='mt-2 text-sm'>Preto</p>
+                        <p className='mt-2 text-sm text-center'>Preto</p>
                       </div>
                     ) : (<></>)}
                     {data.cor.includes("Cinza Acetinado") ? (
                       <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
                         <div className='w-4 h-4 bg-gray-500 rounded-full' />
-                        <p className='mt-2 text-sm'>Cinza Acetinado</p>
+                        <p className='mt-2 text-sm text-center'>Cinza Acetinado</p>
                       </div>
                     ) : (<></>)}
                     {data.cor.includes("Dourado") ? (
                       <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
                         <div className='w-4 h-4 bg-amber-500 rounded-full' />
-                        <p className='mt-2 text-sm'>Dourado</p>
+                        <p className='mt-2 text-sm text-center'>Dourado</p>
                       </div>
                     ) : (<></>)}
                     {data.cor.includes("Verde") ? (
                       <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
                         <div className='w-4 h-4 bg-emerald-500 rounded-full' />
-                        <p className='mt-2 text-sm'>Verde</p>
+                        <p className='mt-2 text-sm text-center'>Verde</p>
                       </div>
                     ) : (<></>)}
                     {data.cor.includes("Azul Marinho") ? (
                       <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
                         <div className='w-4 h-4 bg-blue-950 rounded-full' />
-                        <p className='mt-2 text-sm'>Azul Marinho</p>
+                        <p className='mt-2 text-sm text-center'>Azul Marinho</p>
                       </div>
                     ) : (<></>)}
                     {data.cor.includes("Rosa") ? (
                       <div className='border border-gray-300 rounded-lg p-6 w-[175px] flex flex-col justify-center items-center'>
                         <div className='w-4 h-4 bg-fuchsia-400 rounded-full' />
-                        <p className='mt-2 text-sm'>Rosa</p>
+                        <p className='mt-2 text-sm text-center'>Rosa</p>
                       </div>
                     ) : (<></>)}
                   </div>

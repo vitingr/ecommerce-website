@@ -79,8 +79,7 @@ const page = () => {
       if (validation !== false) {
         items.push(item)
       }
-
-      //        console.log(`${key} ${item[key]}`)
+      // console.log(`${key} ${item[key]}`)
     })
     setData(items)
 

@@ -13,7 +13,9 @@ const CellphoneCard = ({ content }: { content: any }) => {
   return (
     <div className='flex flex-col gap-4 bg-white p-10 rounded-2xl'>
       <div className='flex justify-center w-full h-[175px]'>
-        <img src={content.foto} className='max-w-[150px] max-h-[150px] w-full h-full' alt="photo image" />
+        <Link href={`/buy/${content.subcategoria}-${content.id}`}>
+          <img src={content.foto} className='max-w-[150px] max-h-[150px] w-full h-full transition-all duration-300 hover:scale-110' alt="photo image" />
+        </Link>
       </div>
       <div>
         <h1 className='font-bold text-lg'>{content.nome}</h1>

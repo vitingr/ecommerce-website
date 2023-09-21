@@ -15,7 +15,7 @@ const CatalogoCard = ({ content }: { content: any }) => {
     <div className='flex gap-2 bg-white p-10 rounded-2xl h-[325px] overflow-hidden mb-4'>
       <Link href={`/buy/${content.subcategoria}-${content.id}`} className='w-full max-w-[200px]'>
         <div className='w-full flex items-center justify-center'>
-          <img src={content.foto} alt="option photo" className='max-w-[275px] transition-all duration-300 hover:scale-110' />
+          <img src={content.foto} alt="option photo" className='max-w-[200px] transition-all duration-300 hover:scale-110' />
         </div>
       </Link>
       <div className='w-full border-r border-gray-300 pr-4'>
