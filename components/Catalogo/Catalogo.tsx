@@ -5,13 +5,7 @@ import React, { useEffect, useState } from 'react'
 import CatalogoCard from './CatalogoCard'
 import CellphoneCard from './CellphoneCard'
 
-const Catalogo = ({ type, method, params, data, setData }: catalogo) => {
-
-  const fetchData = async () => {
-    const searchProduct = await fetch(`/api/products/data/${type}`)
-    const responseProduct = await searchProduct.json()
-    setData(responseProduct)
-  }
+const Catalogo = ({ type, method, data, setData , fetchData}: catalogo) => {
 
   const handleSearch = async () => {
     const result = await fetch(`/api/products/search/${type}`)
@@ -26,10 +20,10 @@ const Catalogo = ({ type, method, params, data, setData }: catalogo) => {
           handleSearch()
         }
       } else {
-        fetchData()
+        fetchData(type)
       }
     }
-  }, [type, method, data])
+  }, [type])
 
   return data.length > 0 ? (
     <div className='max-w-[950px] w-full'>
@@ -38,7 +32,7 @@ const Catalogo = ({ type, method, params, data, setData }: catalogo) => {
           {data.length > 0 ? (
             <>
               {data.map((product: any) => (
-                <CellphoneCard content={product} key={product.id} />
+                <CellphoneCard content={product} key={product.nome} />
               ))}
             </>
           ) : (
@@ -64,7 +58,9 @@ const Catalogo = ({ type, method, params, data, setData }: catalogo) => {
       )}
     </div>
   ) : (
-    <div className="loader" />
+    <div className='w-full flex flex-col items-center bg-white min-h-[32vh] p-12 rounded-xl'>
+      Nenhum Produto Corresponde à sua busca
+    </div>
   )
 }
 

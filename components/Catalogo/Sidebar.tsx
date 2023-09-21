@@ -4,7 +4,7 @@ import { FormState, sidebar } from '@types'
 import React, { useState } from 'react'
 import { options } from '@constants/filters'
 
-const Sidebar = ({ type, params, setParams, data, setData }: sidebar) => {
+const Sidebar = ({ type, setParams, fetchData }: sidebar) => {
 
   const search: { key?: string } = {
     key: String(type)
@@ -13,38 +13,11 @@ const Sidebar = ({ type, params, setParams, data, setData }: sidebar) => {
   const [query, setQuery] = useState<any>(search != undefined ? options[search.key as keyof typeof options] : "")
 
   const filter = async (fieldName: keyof FormState | string, value: string) => {
+
     await setParams((prevForm: any) => ({ ...prevForm, [fieldName]: value }));
 
-    const items: any = []
+    await fetchData(type)
 
-    data.map((item: any) => {
-
-      let validation = true
-
-      for (const key in item) {
-
-        if (typeof item[key] === 'string' && typeof params[key] === 'string' && item[key].includes(params[key])) {
-          // console.log(`true ${key} = ${item[key]} / ${params[key]}`)
-          validation = true
-        } else {
-          if (typeof item[key] === 'number' && typeof params[key] === 'number' || key === "id" || key === "categoria" || key === "subcategoria" || key === "nome" || key === "descricao" || key === "preco" || key === "desconto" || key === "foto") {
-            // console.log(`true ${key}`)
-            validation = true
-          } else {
-            // console.log(`false ${key}`)
-            validation = false
-          }
-        }
-      }
-
-      if (validation === true) {
-        console.log("true")
-        items.push(item)
-      }
-
-      //        console.log(`${key} ${item[key]}`)
-    })
-    await setData(items)
   }
 
   return (

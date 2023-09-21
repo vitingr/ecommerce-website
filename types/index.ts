@@ -10,10 +10,8 @@ export interface destaqueSm {
 
 export interface sidebar {
   type: String;
-  params?: any;
   setParams?: any;
-  setData: any;
-  data: any
+  fetchData: any;
 }
 
 export interface catalogo {
@@ -21,7 +19,8 @@ export interface catalogo {
   method?: String;
   params: any;
   setData: any;
-  data: any
+  data: any;
+  fetchData: any;
 }
 
 export interface optionsCreateProduct {

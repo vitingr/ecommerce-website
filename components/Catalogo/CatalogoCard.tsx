@@ -12,13 +12,13 @@ const CatalogoCard = ({ content }: { content: any }) => {
   const parcelamentoFormatado = parcelamento.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
   return (
-    <div className='flex gap-2 bg-white p-10 rounded-2xl h-[300px] overflow-hidden mb-4'>
+    <div className='flex gap-2 bg-white p-10 rounded-2xl h-[325px] overflow-hidden mb-4'>
       <Link href={`/buy/${content.subcategoria}-${content.id}`} className='w-full max-w-[200px]'>
         <div className='w-full flex items-center justify-center'>
           <img src={content.foto} alt="option photo" className='max-w-[275px] transition-all duration-300 hover:scale-110' />
         </div>
       </Link>
-      <div className='w-full border-r border-gray-300'>
+      <div className='w-full border-r border-gray-300 pr-4'>
         <h1 className='font-bold text-xl'>{content.nome}</h1>
         <h5 className='text-neutral-400 text-xs mb-4'>{content.id}</h5>
         {content.cor ? (
