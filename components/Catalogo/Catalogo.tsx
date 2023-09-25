@@ -28,7 +28,7 @@ const Catalogo = ({ type, method, data, setData , fetchData}: catalogo) => {
   return data.length > 0 ? (
     <div className='max-w-[950px] w-full'>
       {type === "cellphone" ? (
-        <div className='w-full flex gap-10'>
+        <div className='w-full flex flex-wrap justify-center gap-10'>
           {data.length > 0 ? (
             <>
               {data.map((product: any) => (
@@ -36,9 +36,7 @@ const Catalogo = ({ type, method, data, setData , fetchData}: catalogo) => {
               ))}
             </>
           ) : (
-            <>
-              <p className='w-full text-center'>Ops, Nenhum Produto foi Encontrado...</p>
-            </>
+            <><p className='w-full text-center'>Ops, Nenhum Produto foi Encontrado...</p></>
           )}
         </div>
       ) : (
@@ -50,17 +48,13 @@ const Catalogo = ({ type, method, data, setData , fetchData}: catalogo) => {
               ))}
             </>
           ) : (
-            <>
-              <p className='w-full text-center'>Ops, Nenhum Produto foi Encontrado...</p>
-            </>
+            <><p className='w-full text-center'>Ops, Nenhum Produto foi Encontrado...</p></>
           )}
         </div>
       )}
     </div>
   ) : (
-    <div className='w-full flex flex-col items-center bg-white min-h-[32vh] p-12 rounded-xl'>
-      Nenhum Produto Corresponde à sua busca
-    </div>
+    <div className='w-full flex flex-col items-center bg-white min-h-[32vh] p-12 rounded-xl'>Nenhum Produto Corresponde à sua busca</div>
   )
 }
 

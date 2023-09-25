@@ -15,7 +15,6 @@ const Sidebar = ({ type, setParams, fetchData }: sidebar) => {
   const filter = async (fieldName: keyof FormState | string, value: string) => {
 
     await setParams((prevForm: any) => ({ ...prevForm, [fieldName]: value }));
-
     await fetchData(type)
 
   }
