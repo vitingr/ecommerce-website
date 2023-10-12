@@ -4,6 +4,7 @@ import { getInterface } from '@types'
 
 export const GET = async ({ params }: getInterface) => {
   try {
+    
     const userInfo = await currentUser()
 
     const user = await prisma.user.findUnique({

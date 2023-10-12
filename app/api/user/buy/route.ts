@@ -4,37 +4,21 @@ import { getInterface } from '@types'
 
 export const POST = async (request: Request, { params }: getInterface) => {
 
-  const {productId, value} = await request.json()
+  const { purchaseId } = await request.json()
+
+  console.log(purchaseId)
 
   try {
-    const user = await currentUser()
-
-    const userExists = await prisma.user.findUnique({
+    const buyProduct = await prisma.purchase.delete({
       where: {
-        uid: user?.id
+        id: purchaseId
       }
     })
 
-    if (userExists) {
-      try {
-        const newPurchase = await prisma.purchase.create({
-          data: {
-            userId: user?.id,
-            productId: productId,
-            cupom: "",
-            value: value
-          }
-        })
+    return new Response(`Compra realizada com sucesso!`, { status: 200 })
 
-        return new Response(JSON.stringify(newPurchase), { status: 200 })
-
-      } catch (error) {
-        return new Response("ERRO! Não foi possível realizar a compra", { status: 500 })
-      }
-    } else {
-      return new Response("ERRO! Usuário não cadastrado", { status: 500 })
-    }
   } catch (error) {
-    return new Response("ERRO! Não foi possível encontrar o usuário", { status: 500 })
+    console.log(error)
+    return new Response("ERRO! Não foi possível realizar a compra", { status: 500 })
   }
 } 

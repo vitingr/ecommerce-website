@@ -21,13 +21,12 @@ const page = () => {
     setData(response)
   }
 
-  const buyProduct = async () => {
+  const buyProduct = async (purchaseId: string) => {
     try {
       const purchase = await fetch(`/api/user/buy`, {
         method: "POST",
         body: JSON.stringify({
-          productId: data.id,
-          value: data.preco
+          purchaseId: purchaseId
         })
       })
 
@@ -39,7 +38,8 @@ const page = () => {
       }
 
     } catch (error) {
-      throw error
+      console.log(error)
+      throw new Error("Não foi possível finalizar a compra...")
     }
   }
 
@@ -55,7 +55,7 @@ const page = () => {
       <div className='w-full flex justify-center gap-16 min-h-[600px] bg-white'>
         <div className='max-w-[650px]'>
           <div className='flex gap-6'>
-            <div><img src={data.foto} alt="Product Image" className='max-w-[200px] w-full' /></div>
+            <div className='max-w-[200px] w-full'><img src={data.foto} alt="Product Image" className='w-full' /></div>
             <div>
               <h1 className='font-bold text-lg'>
                 {data.nome ? (<>{data.nome} </>) : (<></>)}
@@ -112,7 +112,7 @@ const page = () => {
               <h1 className='w-full text-right text-2xl font-bold'>R$ {data.preco},00</h1>
             </div>
             <h5 className='text-sm text-neutral-500 mt-2'>Ou parcelado em até 12x de R$ {(data.preco / 12).toFixed(2)}</h5>
-            <div className='mt-12 w-full rounded-full p-2 text-center text-white bg-blue-500 font-bold cursor-pointer transition-all duration-300 hover:bg-blue-600' onClick={buyProduct}>
+            <div className='mt-12 w-full rounded-full p-2 text-center text-white bg-blue-500 font-bold cursor-pointer transition-all duration-300 hover:bg-blue-600' onClick={() => buyProduct(data.id)}>
               Fechar Pedido
             </div>
           </div>

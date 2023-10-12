@@ -5,11 +5,15 @@ import { usePathname } from 'next/navigation'
 import ProductSidebar from '@components/ProductSidebar'
 import { IoCaretForward } from 'react-icons/io5'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
+import { useRouter } from 'next/navigation'
 
 const page = () => {
 
   const pathname = usePathname().split("/")
   const query = pathname[2]
+
+  const router = useRouter()
 
   const [data, setData] = useState<any>([])
   const [preco, setPreco] = useState<any>("")
@@ -19,6 +23,35 @@ const page = () => {
     const result = await fetch(`/api/products/${query}`)
     const response = await result.json()
     setData(response)
+  }
+
+  const addToCart = async () => {
+    try {
+      console.log(`${data.id} / ${data.preco} / ${data.foto} / ${data.descricao}`)
+      const purchase = await fetch(`/api/user/addToCart`, {
+        method: "POST",
+        body: JSON.stringify({
+          productId: data.id,
+          value: data.preco,
+          foto: data.foto,
+          descricao: data.descricao,
+          nome: data.nome,
+          categoria: data.subcategoria
+        })
+      })
+
+      if (purchase.ok) {
+        toast.success("Produto Adicionado ao carrinho!")
+        router.push(`/buy/${query}/confirm`)
+      } else {
+        console.log("Não deu bom!")
+        toast.error("ERRO, não foi possível adicionar ao carrinho!")
+      }
+
+    } catch (error) {
+      console.log(error)
+      throw new Error("Erro ao adicionar o produto ao carrinho.")
+    }
   }
 
   useEffect(() => {
@@ -41,11 +74,9 @@ const page = () => {
               <h3 className='text-white font-extralight text-xs'>Por <span className='font-bold text-base text-white'>{preco}</span> à vista</h3>
               <h5 className='text-white font-extralight text-xs'>ou 12x de <span className='font-bold text-base text-white'>{parcelamento}</span> nos demais cartões</h5>
             </div>
-            <Link href={`/buy/${query}/confirm`}>
-              <div className='bg-blue-400 text-white rounded-full p-2 w-[200px] text-center cursor-pointer hover:bg-blue-500 transition-all duration-300 font-bold'>
-                Comprar Agora
-              </div>
-            </Link>
+            <div className='bg-blue-400 text-white rounded-full p-2 w-[200px] text-center cursor-pointer hover:bg-blue-500 transition-all duration-300 font-bold' onClick={() => addToCart()}>
+              Adicionar ao carrinho
+            </div>
           </div>
         </div>
       </div>
@@ -145,11 +176,9 @@ const page = () => {
               <div className='rounded-xl'>
                 <h4 className='text-2xl'>{preco}</h4>
                 <p>ou 12x de {parcelamento} vezes sem juros</p>
-                <Link href={`/buy/${query}/confirm`}>
-                  <div className='bg-[#262f40] mt-4 cursor-pointer font-bold text-center text-white w-full p-[7.5px] rounded-full hover:bg-[#1d2430] transition-all duration-200'>
-                    Comprar
-                  </div>
-                </Link>
+                <div className='bg-[#262f40] mt-4 cursor-pointer font-bold text-center text-white w-full p-[7.5px] rounded-full hover:bg-[#1d2430] transition-all duration-200' onClick={() => addToCart()}>
+                  Adicionar ao carrinho
+                </div>
               </div>
             </div>
           </div>

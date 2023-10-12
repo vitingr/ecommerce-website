@@ -33,7 +33,7 @@ model Coupon {
   users String?
 }
 
-model Purchase { 
+model Purchase {
   id              String    @id @default(auto()) @map("_id") @db.ObjectId
   userId          String?
   productId       String?
@@ -41,6 +41,10 @@ model Purchase {
   data            DateTime? @default(now())
   cupom           String?
   value           Int?
+  foto            String?
+  descricao       String?
+  quantidade      Int?
+  nome            String?
 }
 
 model Product {

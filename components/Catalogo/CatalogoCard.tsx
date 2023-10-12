@@ -2,7 +2,6 @@ import Link from 'next/link'
 import React from 'react'
 import { IoCheckmark, IoCard } from 'react-icons/io5'
 
-
 const CatalogoCard = ({ content }: { content: any }) => {
 
   const preco = content.preco;
@@ -59,8 +58,7 @@ const CatalogoCard = ({ content }: { content: any }) => {
           <li className='catalogo-item-list'>Jarra com enchimento Automático</li>
           <li className='catalogo-item-list'>Dual Auto Ice Maker</li>
         </ul>
-      </div>
-
+      </div>   
 
       <div className='w-full pl-4'>
         <div className='h-[150px]'>
