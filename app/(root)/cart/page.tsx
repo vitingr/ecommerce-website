@@ -75,7 +75,7 @@ const page = () => {
                   {item.quantidade > 1 ? <p className='text-center text-sm'>Comprar {item.quantidade} unidades</p> : <p className='text-center text-sm'>Comprar {item.quantidade} unidade</p>}
                 </div>
                 <div className='w-full max-w-[325px] p-1 text-center border text-[13px] border-zinc-800 rounded-full cursor-pointer' onClick={() => removeProduct(item.id)}>Remover Item</div>
-                <Link href={`/buy/${item.productCategory}-${item.productId}/confirm`} className='w-full max-w-[325px] text-center p-2 text-[12px] bg-zinc-800 text-white rounded-full cursor-pointer hover:bg-zinc-700 transition-all duration-200'>
+                <Link href={`/buy/${item.productCategory}-${item.id}/confirm`} className='w-full max-w-[325px] text-center p-2 text-[12px] bg-zinc-800 text-white rounded-full cursor-pointer hover:bg-zinc-700 transition-all duration-200'>
                   Confirmar Compra
                 </Link>
               </div>

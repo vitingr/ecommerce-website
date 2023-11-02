@@ -42,7 +42,7 @@ const page = () => {
 
       if (purchase.ok) {
         toast.success("Produto Adicionado ao carrinho!")
-        router.push(`/buy/${query}/confirm`)
+        router.push(`/cart`)
       } else {
         console.log("Não deu bom!")
         toast.error("ERRO, não foi possível adicionar ao carrinho!")

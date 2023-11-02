@@ -12,11 +12,14 @@ const page = () => {
   const pathname = usePathname().split("/")
   const query = pathname[2]
 
+  const divider = pathname[2].split("-")
+  const purchaseId = divider[1]
+
   const [data, setData] = useState<any>([])
   const [quantity, setQuantity] = useState<number>(1)
 
   const getData = async () => {
-    const result = await fetch(`/api/products/${query}`)
+    const result = await fetch(`/api/products/getProductByPurchase/${query}`)
     const response = await result.json()
     setData(response)
   }
@@ -112,7 +115,7 @@ const page = () => {
               <h1 className='w-full text-right text-2xl font-bold'>R$ {data.preco},00</h1>
             </div>
             <h5 className='text-sm text-neutral-500 mt-2'>Ou parcelado em até 12x de R$ {(data.preco / 12).toFixed(2)}</h5>
-            <div className='mt-12 w-full rounded-full p-2 text-center text-white bg-blue-500 font-bold cursor-pointer transition-all duration-300 hover:bg-blue-600' onClick={() => buyProduct(data.id)}>
+            <div className='mt-12 w-full rounded-full p-2 text-center text-white bg-blue-500 font-bold cursor-pointer transition-all duration-300 hover:bg-blue-600' onClick={() => buyProduct(purchaseId)}>
               Fechar Pedido
             </div>
           </div>
