@@ -24,25 +24,32 @@ const page = () => {
     setData(response)
   }
 
-  const buyProduct = async (purchaseId: string) => {
+  const addToCart = async () => {
     try {
-      const purchase = await fetch(`/api/user/buy`, {
+      console.log(`${data.id} / ${data.preco} / ${data.foto} / ${data.descricao}`)
+      const purchase = await fetch(`/api/user/addToCart`, {
         method: "POST",
         body: JSON.stringify({
-          purchaseId: purchaseId
+          productId: data.id,
+          value: data.preco,
+          foto: data.foto,
+          descricao: data.descricao,
+          nome: data.nome,
+          categoria: data.subcategoria
         })
       })
 
       if (purchase.ok) {
-        toast.success("Produto Comprado com Sucesso!")
-        router.push("/")
+        toast.success("Produto Adicionado ao carrinho!")
+        router.push(`/cart`)
       } else {
-        toast.error("ERRO, não foi possível comprar o produto")
+        console.log("Não deu bom!")
+        toast.error("ERRO, não foi possível adicionar ao carrinho!")
       }
 
     } catch (error) {
       console.log(error)
-      throw new Error("Não foi possível finalizar a compra...")
+      throw new Error("Erro ao adicionar o produto ao carrinho.")
     }
   }
 
@@ -115,8 +122,8 @@ const page = () => {
               <h1 className='w-full text-right text-2xl font-bold'>R$ {data.preco},00</h1>
             </div>
             <h5 className='text-sm text-neutral-500 mt-2'>Ou parcelado em até 12x de R$ {(data.preco / 12).toFixed(2)}</h5>
-            <div className='mt-12 w-full rounded-full p-2 text-center text-white bg-blue-500 font-bold cursor-pointer transition-all duration-300 hover:bg-blue-600' onClick={() => buyProduct(purchaseId)}>
-              Fechar Pedido
+            <div className='mt-12 w-full rounded-full p-2 text-center text-white bg-blue-500 font-bold cursor-pointer transition-all duration-300 hover:bg-blue-600' onClick={() => addToCart()}>
+              Adicionar ao Carrinho
             </div>
           </div>
           <p className='text-sm text-neutral-500 mt-6 text-justify'>

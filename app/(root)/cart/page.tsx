@@ -35,6 +35,23 @@ const page = () => {
     }
   }
 
+  const buyAllProducts = async () => {
+    try { 
+      const response = await fetch("/api/user/buy/buyAll", {
+        method: "POST"
+      })
+
+      if (response.ok) {
+        fetchData()
+        toast.success("Produto removido do carrinho!")
+      } else {
+        toast.error("Não foi possível remover o item do carrinho!")
+      }
+    } catch (error) {
+      return new Error("Não foi possível comprar os produtos")
+    }
+  }
+
   useEffect(() => {
     fetchData()
   }, [])
@@ -58,7 +75,7 @@ const page = () => {
             descricao: string;
             quantidade: number
           }) => (
-            <div className="w-[850px] h-[300px] bg-white mb-8 rounded-xl flex gap-6 p-12" key={item.id}>
+            <div className="max-w-[850px] w-full h-[300px] bg-white mb-8 rounded-xl flex gap-6 p-12" key={item.id}>
               <div className='w-full max-w-[200px] h-[200px] flex flex-col justify-center items-center'><img src={item.foto} alt="Product Photo" className='w-[175px] h-[175px]' /></div>
               <div className='w-full'>
                 <h1 className='font-bold text-xl'>{item.nome}</h1>
@@ -81,6 +98,9 @@ const page = () => {
               </div>
             </div>
           ))}
+          <div className='max-w-[850px] w-full bg-zinc-800 text-white rounded-full text-center p-3 cursor-pointer' onClick={async () => await buyAllProducts()}>
+            Confirmar Tudo
+          </div>
         </div>
       ) : (
         <h1 className='text-center font-3xl p-[10%]'>Nenhuma Compra até o momento</h1>

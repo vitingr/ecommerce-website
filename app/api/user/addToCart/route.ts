@@ -31,6 +31,17 @@ export const POST = async (request: Request, { params }: getInterface) => {
           }
         })
 
+        const addUserItem = await prisma.user.update({
+          where: {
+            id: userExists?.id
+          },
+          data: {
+            carrinho: {
+              push: newPurchase.id
+            }
+          }
+        })
+
         return new Response(JSON.stringify(newPurchase), { status: 200 })
 
       } catch (error) {
